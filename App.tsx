@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import { AppLoading } from 'expo';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
+
+import HomeScreen from '~/screens/Home';
 
 import light from './src/styles/themes/light';
 
@@ -22,14 +23,8 @@ export default function App() {
 
 	return (
 		<ThemeProvider theme={light}>
-			<View
-				style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}
-			>
-				<Text style={{ fontFamily: 'VisbyRoundHeavy', fontSize: 32 }}>
-					Goodbye World
-				</Text>
-			</View>
-			<StatusBar style="auto" />
+			<HomeScreen />
+			<StatusBar style="dark" backgroundColor="#fff" translucent={false} />
 		</ThemeProvider>
 	);
 }
