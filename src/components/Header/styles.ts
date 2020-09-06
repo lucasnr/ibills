@@ -24,11 +24,14 @@ export const Link = styled.Text<LinkProps>`
 	justify-content: center;
 	text-align: center;
 	text-transform: uppercase;
+`;
+
+export const LinkContainer = styled.TouchableOpacity`
 	width: 50%;
 `;
 
 export const BorderBottom = styled.View`
 	background-color: ${({ theme }) => theme.colors.primary};
 	height: 2px;
-	width: 50%;
+	width: 55%;
 `;

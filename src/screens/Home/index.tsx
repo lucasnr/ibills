@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Header from '~/components/Header';
 import { Container } from './styles';
 
 const Home: React.FC = () => {
-	const [active, setActive] = useState(0);
-
 	return (
 		<Container>
-			<Header active={active} />
+			<Header />
 		</Container>
 	);
 };

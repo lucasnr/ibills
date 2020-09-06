@@ -1,29 +1,33 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback, useState } from 'react';
 import { Animated, Dimensions } from 'react-native';
 
-import { Container, Link, BorderBottom } from './styles';
-
-interface Props {
-	active?: number;
-}
+import { Container, Link, LinkContainer, BorderBottom } from './styles';
 
 const { width } = Dimensions.get('window');
 
-const Header: React.FC<Props> = ({ active = 0 }) => {
+const Header: React.FC = () => {
 	const value = useRef(new Animated.Value(0)).current;
+	const [active, setActive] = useState(0);
 
 	useEffect(() => {
-		Animated.timing(value, {
+		Animated.spring(value, {
 			toValue: active === 0 ? 0 : width / 2,
-			duration: 300,
 			useNativeDriver: false,
 		}).start();
 	}, [active]);
 
+	const linkCallback = useCallback((target: number) => {
+		setActive(target);
+	}, []);
+
 	return (
 		<Container style={{ elevation: 4 }}>
-			<Link active={active === 0}>Login</Link>
-			<Link active={active === 1}>Cadastro</Link>
+			<LinkContainer onPress={() => linkCallback(0)}>
+				<Link active={active === 0}>Login</Link>
+			</LinkContainer>
+			<LinkContainer onPress={() => linkCallback(1)}>
+				<Link active={active === 1}>Cadastro</Link>
+			</LinkContainer>
 
 			<Animated.View
 				style={{
