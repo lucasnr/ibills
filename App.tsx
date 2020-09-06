@@ -1,21 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
+import { AppLoading } from 'expo';
+import { StatusBar } from 'expo-status-bar';
+import { useFonts } from 'expo-font';
+
+import light from './src/styles/themes/light';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+	const [loaded] = useFonts({
+		VisbyRoundLight: require('./src/assets/font/VisbyRoundCF-Light.otf'),
+		VisbyRoundRegular: require('./src/assets/font/VisbyRoundCF-Regular.otf'),
+		VisbyRoundMedium: require('./src/assets/font/VisbyRoundCF-Medium.otf'),
+		VisbyRoundSemiBold: require('./src/assets/font/VisbyRoundCF-SemiBold.otf'),
+		VisbyRoundBold: require('./src/assets/font/VisbyRoundCF-Bold.otf'),
+		VisbyRoundExtraBold: require('./src/assets/font/VisbyRoundCF-ExtraBold.otf'),
+		VisbyRoundHeavy: require('./src/assets/font/VisbyRoundCF-Heavy.otf'),
+	});
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+	if (!loaded) return <AppLoading />;
+
+	return (
+		<ThemeProvider theme={light}>
+			<View
+				style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}
+			>
+				<Text style={{ fontFamily: 'VisbyRoundHeavy', fontSize: 32 }}>
+					Goodbye World
+				</Text>
+			</View>
+			<StatusBar style="auto" />
+		</ThemeProvider>
+	);
+}
