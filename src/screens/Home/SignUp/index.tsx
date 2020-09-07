@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Image } from 'react-native';
 
 import Input from '~/components/Input';
@@ -16,7 +16,15 @@ import google from '~/assets/img/google.png';
 import facebook from '~/assets/img/facebook.png';
 import apple from '~/assets/img/apple.png';
 
-const SignUp: React.FC = () => {
+interface Props {
+	setActive(value: string): void;
+}
+
+const SignUp: React.FC<Props> = ({ setActive }) => {
+	const buttonCallback = useCallback(() => {
+		setActive('eoq');
+	}, [setActive]);
+
 	return (
 		<>
 			<Title>Seja bem vindo!{'\n'}Vamos fazer seu cadastro?</Title>
@@ -39,7 +47,7 @@ const SignUp: React.FC = () => {
 				style={{ marginBottom: 16 }}
 			/>
 
-			<Button text="Criar conta" onPress={() => {}} />
+			<Button text="Criar conta" onPress={buttonCallback} />
 
 			<Separator>
 				<SeparatorLine />

@@ -1,13 +1,10 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Wrapper = styled.View`
 	background-color: ${({ theme }) => theme.background.primary};
 	border-bottom-left-radius: 40px;
 	border-bottom-right-radius: 40px;
-	align-items: center;
-	flex-direction: row;
 	height: 50px;
-	position: relative;
 `;
 
 interface LinkProps {

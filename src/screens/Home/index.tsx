@@ -20,7 +20,7 @@ const Home: React.FC = () => {
 	}, [active]);
 
 	return (
-		<Container keyboardShouldPersistTaps={true}>
+		<Container keyboardShouldPersistTaps="always">
 			<Header active={active} setActive={setActive} />
 			<Main>
 				<AnimatedContainer
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
 
 				<AnimatedContainer
 					style={{
-						zIndex: active === 'signup' ? 5 : -5,
+						zIndex: active !== 'login' ? 5 : -5,
 						opacity: opacity.interpolate({
 							inputRange: [0, 1],
 							outputRange: [1, 0],
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
 						],
 					}}
 				>
-					<SignUp />
+					<SignUp setActive={setActive} />
 				</AnimatedContainer>
 			</Main>
 
