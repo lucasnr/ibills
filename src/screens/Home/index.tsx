@@ -1,77 +1,90 @@
-import React from 'react';
-import { Image } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { Animated, ViewStyle, StyleProp } from 'react-native';
 
 import Header from '~/components/Header';
-import Input from '~/components/Input';
-import Button from '~/components/Button';
-import {
-	Container,
-	Main,
-	Title,
-	ForgotPasswordContainer,
-	ForgotPassword,
-	Rocket,
-	Finance,
-	Separator,
-	SeparatorLine,
-	SeparatorText,
-	SocialMedia,
-	SocialMediaItem,
-} from './styles';
+import { Container, Main, Rocket, Finance } from './styles';
 
-import google from '~/assets/img/google.png';
-import facebook from '~/assets/img/facebook.png';
-import apple from '~/assets/img/apple.png';
+import Login from './Login';
+import SignUp from './SignUp';
 
 const Home: React.FC = () => {
+	const [active, setActive] = useState('login');
+	const opacity = useRef(new Animated.Value(1)).current;
+
+	useEffect(() => {
+		Animated.timing(opacity, {
+			toValue: active === 'login' ? 1 : 0,
+			duration: 300,
+			useNativeDriver: false,
+		}).start();
+	}, [active]);
+
 	return (
-		<Container>
-			<Header />
+		<Container keyboardShouldPersistTaps={true}>
+			<Header active={active} setActive={setActive} />
 			<Main>
-				<Title>Seja bem-vindo de volta!</Title>
-				<Input
-					placeholder="E-mail"
-					keyboardType="email-address"
-					autoCompleteType="email"
-					textContentType="emailAddress"
-					style={{ marginBottom: 10 }}
-				/>
-				<Input
-					placeholder="Senha"
-					secureTextEntry={true}
-					style={{ marginBottom: 16 }}
-				/>
+				<AnimatedContainer
+					style={{
+						zIndex: active === 'login' ? 5 : -5,
+						opacity,
+						transform: [
+							{
+								translateY: opacity.interpolate({
+									inputRange: [0, 1],
+									outputRange: [-20, 0],
+								}),
+							},
+						],
+					}}
+				>
+					<Login />
+				</AnimatedContainer>
 
-				<Button text="Login" onPress={() => {}} />
-
-				<ForgotPasswordContainer>
-					<ForgotPassword>Esqueceu sua senha?</ForgotPassword>
-				</ForgotPasswordContainer>
-
-				<Separator>
-					<SeparatorLine />
-					<SeparatorText>Ou</SeparatorText>
-					<SeparatorLine />
-				</Separator>
-
-				<SocialMedia>
-					<SocialMediaItem>
-						<Image source={google} />
-					</SocialMediaItem>
-
-					<SocialMediaItem>
-						<Image source={facebook} />
-					</SocialMediaItem>
-
-					<SocialMediaItem>
-						<Image source={apple} />
-					</SocialMediaItem>
-				</SocialMedia>
+				<AnimatedContainer
+					style={{
+						zIndex: active === 'signup' ? 5 : -5,
+						opacity: opacity.interpolate({
+							inputRange: [0, 1],
+							outputRange: [1, 0],
+						}),
+						transform: [
+							{
+								translateY: opacity.interpolate({
+									inputRange: [0, 1],
+									outputRange: [0, 20],
+								}),
+							},
+						],
+					}}
+				>
+					<SignUp />
+				</AnimatedContainer>
 			</Main>
 
 			<Rocket />
 			<Finance style={{ resizeMode: 'contain' }} />
 		</Container>
+	);
+};
+
+const AnimatedContainer: React.FC<{
+	style: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
+}> = ({ style, children }) => {
+	return (
+		<Animated.View
+			style={{
+				flexDirection: 'column',
+				height: '100%',
+				justifyContent: 'center',
+				position: 'absolute',
+				paddingVertical: 24,
+				paddingHorizontal: 44,
+				width: '100%',
+				...style,
+			}}
+		>
+			{children}
+		</Animated.View>
 	);
 };
 

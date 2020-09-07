@@ -3,15 +3,17 @@ import styled from 'styled-components/native';
 import rocket from '~/assets/img/illustration-rocket.png';
 import finance from '~/assets/img/illustration-finance.png';
 
-export const Container = styled.View`
+export const Container = styled.ScrollView.attrs({
+	contentContainerStyle: {
+		minHeight: '100%',
+	},
+})`
 	background-color: ${({ theme }) => theme.background.secondary};
-	flex-grow: 1;
 `;
 
 export const Main = styled.View`
 	flex-grow: 1;
-	justify-content: center;
-	padding: 24px 44px;
+	position: relative;
 `;
 
 export const Title = styled.Text`
@@ -19,16 +21,6 @@ export const Title = styled.Text`
 	font-family: 'VisbyRoundMedium';
 	font-size: 16px;
 	margin-bottom: 26px;
-`;
-
-export const ForgotPasswordContainer = styled.TouchableOpacity`
-	margin: 16px auto 0px auto;
-`;
-
-export const ForgotPassword = styled.Text`
-	color: ${({ theme }) => theme.text.secondary};
-	font-family: 'VisbyRoundLight';
-	font-size: 12px;
 `;
 
 export const Separator = styled.View`
