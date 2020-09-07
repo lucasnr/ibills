@@ -1,11 +1,14 @@
 import styled from 'styled-components/native';
+import { Dimensions, StatusBar } from 'react-native';
 
 import rocket from '~/assets/img/illustration-rocket.png';
 import finance from '~/assets/img/illustration-finance.png';
 
+const { height } = Dimensions.get('window');
+
 export const Container = styled.ScrollView.attrs({
 	contentContainerStyle: {
-		minHeight: '100%',
+		minHeight: height - (StatusBar.currentHeight || 0),
 	},
 })`
 	background-color: ${({ theme }) => theme.background.secondary};

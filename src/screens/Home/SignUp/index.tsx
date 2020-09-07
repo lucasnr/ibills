@@ -1,10 +1,14 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { Image } from 'react-native';
 
-import Input from '~/components/Input';
+import FirstForm from './Forms/First';
+import SecondForm from './Forms/Second';
+import ThirdForm from './Forms/Third';
+import LastForm from './Forms/Last';
+import Provider from './context';
+
 import Button from '~/components/Button';
 import {
-	Title,
 	Separator,
 	SeparatorLine,
 	SeparatorText,
@@ -16,59 +20,60 @@ import google from '~/assets/img/google.png';
 import facebook from '~/assets/img/facebook.png';
 import apple from '~/assets/img/apple.png';
 
+const forms = [<FirstForm />, <SecondForm />, <ThirdForm />, <LastForm />];
+
 interface Props {
+	active: string;
 	setActive(value: string): void;
 }
 
-const SignUp: React.FC<Props> = ({ setActive }) => {
-	const buttonCallback = useCallback(() => {
-		setActive('eoq');
-	}, [setActive]);
+const SignUp: React.FC<Props> = ({ active, setActive }) => {
+	const [index, setIndex] = useState(0);
+
+	useEffect(() => {
+		if (active !== 'SignUp-Next') setIndex(0);
+	}, [active]);
+
+	const next = useCallback(() => {
+		setActive('SignUp-Next');
+		if (index < 3) setIndex((prev) => prev + 1);
+	}, [setActive, index]);
 
 	return (
-		<>
-			<Title>Seja bem vindo!{'\n'}Vamos fazer seu cadastro?</Title>
+		<Provider>
+			{forms[index]}
 
-			<Input
-				placeholder="Nome"
-				autoCompleteType="name"
-				style={{ marginBottom: 10 }}
-			/>
-			<Input
-				placeholder="E-mail"
-				autoCompleteType="email"
-				keyboardType="email-address"
-				textContentType="emailAddress"
-				style={{ marginBottom: 10 }}
-			/>
-			<Input
-				placeholder="Senha"
-				secureTextEntry={true}
-				style={{ marginBottom: 16 }}
+			<Button
+				text={
+					index === 0 ? 'Criar conta' : index === 3 ? 'Finalizar' : 'Continuar'
+				}
+				onPress={next}
 			/>
 
-			<Button text="Criar conta" onPress={buttonCallback} />
+			{index === 0 && (
+				<>
+					<Separator>
+						<SeparatorLine />
+						<SeparatorText>Ou</SeparatorText>
+						<SeparatorLine />
+					</Separator>
 
-			<Separator>
-				<SeparatorLine />
-				<SeparatorText>Ou</SeparatorText>
-				<SeparatorLine />
-			</Separator>
+					<SocialMedia>
+						<SocialMediaItem>
+							<Image source={google} />
+						</SocialMediaItem>
 
-			<SocialMedia>
-				<SocialMediaItem>
-					<Image source={google} />
-				</SocialMediaItem>
+						<SocialMediaItem>
+							<Image source={facebook} />
+						</SocialMediaItem>
 
-				<SocialMediaItem>
-					<Image source={facebook} />
-				</SocialMediaItem>
-
-				<SocialMediaItem>
-					<Image source={apple} />
-				</SocialMediaItem>
-			</SocialMedia>
-		</>
+						<SocialMediaItem>
+							<Image source={apple} />
+						</SocialMediaItem>
+					</SocialMedia>
+				</>
+			)}
+		</Provider>
 	);
 };
 

@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components/native';
 import { AppLoading } from 'expo';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import HomeScreen from '~/screens/Home';
 
@@ -17,6 +18,7 @@ export default function App() {
 		VisbyRoundBold: require('./src/assets/font/VisbyRoundCF-Bold.otf'),
 		VisbyRoundExtraBold: require('./src/assets/font/VisbyRoundCF-ExtraBold.otf'),
 		VisbyRoundHeavy: require('./src/assets/font/VisbyRoundCF-Heavy.otf'),
+		...MaterialCommunityIcons.font,
 	});
 
 	if (!loaded) return <AppLoading />;

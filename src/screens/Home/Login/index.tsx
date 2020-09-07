@@ -23,9 +23,10 @@ const Login: React.FC = () => {
 			<Title>Seja bem-vindo de volta!</Title>
 			<Input
 				placeholder="E-mail"
-				keyboardType="email-address"
+				autoCapitalize="none"
 				autoCompleteType="email"
 				textContentType="emailAddress"
+				keyboardType="email-address"
 				style={{ marginBottom: 10 }}
 			/>
 			<Input

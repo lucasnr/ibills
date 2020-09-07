@@ -8,12 +8,12 @@ import Login from './Login';
 import SignUp from './SignUp';
 
 const Home: React.FC = () => {
-	const [active, setActive] = useState('login');
+	const [active, setActive] = useState('Login');
 	const opacity = useRef(new Animated.Value(1)).current;
 
 	useEffect(() => {
 		Animated.timing(opacity, {
-			toValue: active === 'login' ? 1 : 0,
+			toValue: active === 'Login' ? 1 : 0,
 			duration: 300,
 			useNativeDriver: false,
 		}).start();
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
 			<Main>
 				<AnimatedContainer
 					style={{
-						zIndex: active === 'login' ? 5 : -5,
+						zIndex: active === 'Login' ? 5 : -5,
 						opacity,
 						transform: [
 							{
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
 
 				<AnimatedContainer
 					style={{
-						zIndex: active !== 'login' ? 5 : -5,
+						zIndex: active !== 'Login' ? 5 : -5,
 						opacity: opacity.interpolate({
 							inputRange: [0, 1],
 							outputRange: [1, 0],
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
 						],
 					}}
 				>
-					<SignUp setActive={setActive} />
+					<SignUp active={active} setActive={setActive} />
 				</AnimatedContainer>
 			</Main>
 
