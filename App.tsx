@@ -5,7 +5,8 @@ import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import HomeScreen from '~/screens/Home';
+import HomeScreen from './src/screens/Home';
+import AppScreens from './src/screens/App/routes';
 
 import light from './src/styles/themes/light';
 
@@ -25,7 +26,8 @@ export default function App() {
 
 	return (
 		<ThemeProvider theme={light}>
-			<HomeScreen />
+			{/* <HomeScreen /> */}
+			<AppScreens />
 			<StatusBar style="dark" backgroundColor="#fff" translucent={false} />
 		</ThemeProvider>
 	);
