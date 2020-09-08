@@ -24,6 +24,10 @@ function Routes() {
 		<NavigationContainer>
 			<Drawer.Navigator
 				drawerContent={(props) => <CustomDrawer {...props} />}
+				drawerStyle={{
+					borderTopRightRadius: 100,
+					width: 'auto',
+				}}
 				sceneContainerStyle={{ backgroundColor: background.secondary }}
 			>
 				<Drawer.Screen name="Dashboard" component={Dashboard} />

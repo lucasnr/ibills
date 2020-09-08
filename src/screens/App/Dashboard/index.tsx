@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { Container, Text } from './styles';
+import TopBar from '~/components/TopBar';
+import { Container } from './styles';
 
 const Dashboard: React.FC = () => {
 	return (
 		<Container>
-			<Text>Dashboard</Text>
+			<TopBar />
 		</Container>
 	);
 };

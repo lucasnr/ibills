@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
 	justify-content: space-between;
 	flex-grow: 1;
-	padding: 16px;
+	padding: 32px 16px;
 	padding-right: 0px;
 `;
 
@@ -24,7 +24,7 @@ export const Item = styled.TouchableOpacity<Props>`
 	border-right-width: 2px;
 	flex-direction: row;
 	padding: 16px 0px;
-	padding-right: 16px;
+	padding-right: 24px;
 `;
 
 export const ItemLabel = styled.Text<Props>`
@@ -33,4 +33,11 @@ export const ItemLabel = styled.Text<Props>`
 	font-family: 'VisbyRoundRegular';
 	font-size: 14px;
 	margin-left: 8px;
+`;
+
+export const IconContainer = styled.View`
+	align-items: center;
+	height: 24px;
+	justify-content: center;
+	width: 28px;
 `;

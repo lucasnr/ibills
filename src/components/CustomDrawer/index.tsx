@@ -1,54 +1,76 @@
 import React, { useCallback, useMemo, useContext } from 'react';
 import { ThemeContext } from 'styled-components/native';
 import { DrawerContentComponentProps } from '@react-navigation/drawer';
-import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
+import { SvgProps } from 'react-native-svg';
 
 import Menu from './Menu';
-import { Container, ItemsContainer, Item, ItemLabel } from './styles';
+import Home from './SvgIcon/Home';
+import Account from './SvgIcon/Account';
+import Signature from './SvgIcon/Signature';
+import Wallet from './SvgIcon/Wallet';
+import CreditCard from './SvgIcon/CreditCard';
+import Scroll from './SvgIcon/Scroll';
+import Target from './SvgIcon/Target';
+import Chart from './SvgIcon/Chart';
+import Settings from './SvgIcon/Settings';
+import Exit from './SvgIcon/Exit';
+import {
+	Container,
+	ItemsContainer,
+	Item,
+	ItemLabel,
+	IconContainer,
+} from './styles';
 
-const items: { icon: string; label: string; route: string }[] = [
+interface Item {
+	icon: React.FC<SvgProps>;
+	label: string;
+	route: string;
+}
+
+const items: Item[] = [
 	{
-		icon: 'home-outline',
+		icon: Home,
 		label: 'Dashboard',
 		route: 'Dashboard',
 	},
 	{
-		icon: 'account-outline',
+		icon: Account,
 		label: 'Perfil',
 		route: 'Profile',
 	},
 	{
-		icon: 'credit-card-outline',
+		icon: Signature,
 		label: 'Assinatura',
 		route: 'Signature',
 	},
 	{
-		icon: 'wallet-outline',
+		icon: Wallet,
 		label: 'Contas Bancárias',
 		route: 'Accounts',
 	},
 	{
-		icon: 'credit-card-outline',
+		icon: CreditCard,
 		label: 'Cartões de Crédito',
 		route: 'Cards',
 	},
 	{
-		icon: 'note-outline',
+		icon: Scroll,
 		label: 'Receitas e Despesas',
 		route: 'Expenses',
 	},
 	{
-		icon: 'target',
+		icon: Target,
 		label: 'Meu Objetivo',
 		route: 'Goal',
 	},
 	{
-		icon: 'chart-line',
+		icon: Chart,
 		label: 'Relatórios Gerais',
 		route: 'Reports',
 	},
 	{
-		icon: 'settings',
+		icon: Settings,
 		label: 'Configurações',
 		route: 'Settings',
 	},
@@ -78,7 +100,7 @@ const CustomDrawer: React.FC<DrawerContentComponentProps> = ({
 			<Menu navigation={navigation} />
 
 			<ItemsContainer>
-				{items.map(({ route, icon, label }) => {
+				{items.map(({ route, icon: Icon, label }) => {
 					const active = route === currentRoute;
 					return (
 						<Item
@@ -86,11 +108,9 @@ const CustomDrawer: React.FC<DrawerContentComponentProps> = ({
 							onPress={() => itemCallback(route)}
 							active={active}
 						>
-							<Icon
-								name={icon}
-								size={32}
-								color={active ? text.title : text.secondary}
-							/>
+							<IconContainer>
+								<Icon color={active ? text.title : text.secondary} />
+							</IconContainer>
 							<ItemLabel active={active}>{label}</ItemLabel>
 						</Item>
 					);
@@ -98,7 +118,9 @@ const CustomDrawer: React.FC<DrawerContentComponentProps> = ({
 			</ItemsContainer>
 
 			<Item onPress={signOut}>
-				<Icon name={'exit-to-app'} size={32} color={text.title} />
+				<IconContainer>
+					<Exit color={text.title} />
+				</IconContainer>
 				<ItemLabel>Sair</ItemLabel>
 			</Item>
 		</Container>
