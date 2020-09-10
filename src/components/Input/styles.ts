@@ -7,7 +7,7 @@ export const containerStyle = css`
 	border-style: solid;
 	border-width: 1px;
 	color: ${({ theme }) => theme.text.primary};
-	font-family: 'VisbyRoundRegular';
+	font-family: ${({ theme }) => theme.font.primary.regular};
 	font-size: 13px;
 	height: 50px;
 	padding: 10px 8px;

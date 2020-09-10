@@ -15,6 +15,6 @@ export const Center = styled.View`
 
 export const Text = styled.Text`
 	color: ${({ theme }) => theme.text.primary};
-	font-family: 'VisbyRoundRegular';
-	font-size: 20px;
+	font-family: ${({ theme }) => theme.font.secondary.light};
+	font-size: 22px;
 `;

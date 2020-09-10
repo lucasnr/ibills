@@ -12,7 +12,7 @@ export const Container = styled.TouchableOpacity`
 
 export const Text = styled.Text`
 	color: ${({ theme }) => theme.text.alternative};
-	font-family: 'VisbyRoundBold';
+	font-family: ${({ theme }) => theme.font.secondary.bold};
 	font-size: 15px;
 	text-transform: uppercase;
 `;

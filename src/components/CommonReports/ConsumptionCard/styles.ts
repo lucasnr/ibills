@@ -15,7 +15,7 @@ export const Icon = styled.Image`
 `;
 
 export const Title = styled.Text`
-	font-family: 'VisbyRoundBold';
+	font-family: ${({ theme }) => theme.font.secondary.bold};
 	font-size: 18px;
 	margin: 20px 0px 6px 0px;
 `;
@@ -33,7 +33,7 @@ export const Percentage = styled(PercentageContainer)`
 
 export const Period = styled.Text`
 	color: ${({ theme }) => theme.text.secondary};
-	font-family: 'VisbyRoundRegular';
+	font-family: ${({ theme }) => theme.font.secondary.regular};
 	font-size: 12px;
 	margin-top: 12px;
 `;

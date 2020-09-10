@@ -16,19 +16,19 @@ export const Container = styled.View`
 
 export const Greetings = styled.Text`
 	color: ${({ theme }) => theme.text.primary};
-	font-family: 'VisbyRoundRegular';
+	font-family: ${({ theme }) => theme.font.primary.regular};
 	font-size: 16px;
 `;
 
 export const Name = styled(Greetings)`
 	color: ${({ theme }) => theme.colors.secondary};
-	font-family: 'VisbyRoundBold';
+	font-family: ${({ theme }) => theme.font.primary.bold};
 	margin-bottom: 20px;
 `;
 
 export const Caption = styled.Text`
 	color: ${({ theme }) => theme.text.secondary};
-	font-family: 'VisbyRoundRegular';
+	font-family: ${({ theme }) => theme.font.primary.regular};
 	font-size: 12px;
 	padding-right: 16px;
 `;

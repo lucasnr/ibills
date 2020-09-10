@@ -6,7 +6,7 @@ export const Container = styled.View`
 
 export const Caption = styled.Text`
 	color: ${({ theme }) => theme.text.secondary};
-	font-family: 'VisbyRoundRegular';
+	font-family: ${({ theme }) => theme.font.primary.regular};
 	font-size: 8px;
 `;
 
@@ -29,6 +29,6 @@ export const LabelBullet = styled.View`
 
 export const LabelText = styled.Text`
 	color: ${({ theme }) => theme.text.primary};
-	font-family: 'VisbyRoundRegular';
+	font-family: ${({ theme }) => theme.font.secondary.regular};
 	font-size: 10px;
 `;

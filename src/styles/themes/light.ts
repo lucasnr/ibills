@@ -17,6 +17,26 @@ const theme: DefaultTheme = {
 		secondary: '#26C6DA',
 		alternative: '#79D2DE',
 	},
+	font: {
+		primary: {
+			light: 'VisbyRoundLight',
+			regular: 'VisbyRoundRegular',
+			medium: 'VisbyRoundMedium',
+			semiBold: 'VisbyRoundSemiBold',
+			bold: 'VisbyRoundBold',
+			extraBold: 'VisbyRoundExtraBold',
+			heavy: 'VisbyRoundHeavy',
+		},
+		secondary: {
+			light: 'NunitoSansLight',
+			regular: 'NunitoSansRegular',
+			medium: 'NunitoSansMedium',
+			semiBold: 'NunitoSansSemiBold',
+			bold: 'NunitoSansBold',
+			extraBold: 'NunitoSansExtraBold',
+			heavy: 'NunitoSansHeavy',
+		},
+	},
 };
 
 export default theme;

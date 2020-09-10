@@ -5,7 +5,7 @@ import { DrawerActions, NavigationProp } from '@react-navigation/native';
 import menu from '~/assets/img/menu-icon.png';
 
 interface Props {
-	navigation: NavigationProp;
+	navigation: NavigationProp<any>;
 }
 
 const Menu: React.FC<Props> = ({ navigation }) => {

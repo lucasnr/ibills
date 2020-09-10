@@ -11,7 +11,7 @@ export const Container = styled.TouchableOpacity`
 
 export const Placeholder = styled.Text`
 	color: ${({ theme }) => theme.text.secondary};
-	font-family: 'VisbyRoundRegular';
+	font-family: ${({ theme }) => theme.font.primary.regular};
 	font-size: 13px;
 `;
 
@@ -38,7 +38,7 @@ interface OptionProps {
 export const Option = styled.Text<OptionProps>`
 	color: ${({ theme: { text, colors }, selected }) =>
 		selected ? colors.secondary : text.primary};
-	font-family: 'VisbyRoundMedium';
+	font-family: ${({ theme }) => theme.font.primary.medium};
 	font-size: 14px;
 	padding: 16px;
 	text-transform: uppercase;

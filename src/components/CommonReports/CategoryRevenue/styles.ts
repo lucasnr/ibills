@@ -23,7 +23,7 @@ export const LabelBullet = styled.View`
 
 export const LabelText = styled.Text`
 	color: ${({ theme }) => theme.text.primary};
-	font-family: 'VisbyRoundRegular';
+	font-family: ${({ theme }) => theme.font.secondary.regular};
 	font-size: 10px;
 `;
 

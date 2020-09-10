@@ -18,6 +18,13 @@ export default function App() {
 		VisbyRoundBold: require('./src/assets/font/VisbyRoundCF-Bold.otf'),
 		VisbyRoundExtraBold: require('./src/assets/font/VisbyRoundCF-ExtraBold.otf'),
 		VisbyRoundHeavy: require('./src/assets/font/VisbyRoundCF-Heavy.otf'),
+		NunitoSansLight: require('./src/assets/font/NunitoSans-Light.ttf'),
+		NunitoSansRegular: require('./src/assets/font/NunitoSans-Regular.ttf'),
+		NunitoSansMedium: require('./src/assets/font/NunitoSans-SemiBold.ttf'),
+		NunitoSansSemiBold: require('./src/assets/font/NunitoSans-SemiBold.ttf'),
+		NunitoSansBold: require('./src/assets/font/NunitoSans-Bold.ttf'),
+		NunitoSansExtraBold: require('./src/assets/font/NunitoSans-ExtraBold.ttf'),
+		NunitoSansHeavy: require('./src/assets/font/NunitoSans-Black.ttf'),
 		...MaterialCommunityIcons.font,
 	});
 

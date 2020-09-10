@@ -43,7 +43,7 @@ export const Bullet = styled.View<Props>`
 
 export const Timestamp = styled.Text`
 	color: ${({ theme }) => theme.text.primary};
-	font-family: 'VisbyRoundSemiBold';
+	font-family: ${({ theme }) => theme.font.primary.semiBold};
 	font-size: 12px;
 	width: 60px;
 	margin-right: 10px;
@@ -51,7 +51,7 @@ export const Timestamp = styled.Text`
 
 export const Name = styled.Text`
 	color: ${({ theme }) => theme.text.secondary};
-	font-family: 'VisbyRoundLight';
+	font-family: ${({ theme }) => theme.font.primary.light};
 	font-size: 12px;
 	width: 180px;
 	margin-right: 10px;
@@ -59,7 +59,7 @@ export const Name = styled.Text`
 
 export const Type = styled.Text`
 	color: ${({ theme }) => theme.text.secondary};
-	font-family: 'VisbyRoundRegular';
+	font-family: ${({ theme }) => theme.font.primary.regular};
 	font-size: 12px;
 	width: 120px;
 	margin-right: 10px;
@@ -67,7 +67,7 @@ export const Type = styled.Text`
 
 export const Value = styled.Text<Props>`
 	color: ${({ color }) => color};
-	font-family: 'VisbyRoundSemiBold';
+	font-family: ${({ theme }) => theme.font.primary.semiBold};
 	font-size: 12px;
 	width: 90px;
 	margin-right: 10px;

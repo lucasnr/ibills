@@ -36,7 +36,7 @@ export const Item = styled.TouchableOpacity<Props>`
 export const ItemLabel = styled.Text<Props>`
 	color: ${({ theme: { text }, active }) =>
 		active ? text.alternative : text.secondary};
-	font-family: 'VisbyRoundRegular';
+	font-family: ${({ theme }) => theme.font.primary.regular};
 	font-size: 14px;
 	margin-left: 8px;
 `;

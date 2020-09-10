@@ -21,7 +21,7 @@ export const Main = styled.View`
 
 export const Title = styled.Text`
 	color: ${({ theme }) => theme.colors.primary};
-	font-family: 'VisbyRoundMedium';
+	font-family: ${({ theme }) => theme.font.primary.medium};
 	font-size: 16px;
 	margin-bottom: 26px;
 `;
@@ -41,7 +41,7 @@ export const SeparatorLine = styled.View`
 export const SeparatorText = styled.Text`
 	color: ${({ theme }) => theme.text.secondary};
 	font-size: 18px;
-	font-family: 'VisbyRoundLight';
+	font-family: ${({ theme }) => theme.font.primary.light};
 	margin: 0px 18px;
 	text-transform: uppercase;
 `;

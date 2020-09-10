@@ -54,7 +54,7 @@ const CommonReports: React.FC = () => {
 							iconSource={sun}
 							title="Dia"
 							percentage={35}
-							period="7h às 17:59"
+							period="7h às 17:59h"
 						/>
 					</Row>
 				</Card>

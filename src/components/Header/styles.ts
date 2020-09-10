@@ -15,7 +15,7 @@ export const Link = styled.Text<LinkProps>`
 	align-items: center;
 	color: ${({ theme: { text, colors }, active = false }) =>
 		active ? colors.primary : text.secondary};
-	font-family: 'VisbyRoundMedium';
+	font-family: ${({ theme }) => theme.font.primary.medium};
 	font-size: 14px;
 	flex-direction: row;
 	justify-content: center;

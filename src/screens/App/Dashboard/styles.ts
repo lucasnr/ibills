@@ -10,5 +10,5 @@ export const CardIcon = styled.Image`
 export const CardText = styled.Text`
 	color: ${({ theme }) => theme.colors.primary};
 	font-size: 14px;
-	font-family: 'VisbyRoundMedium';
+	font-family: ${({ theme }) => theme.font.primary.medium};
 `;

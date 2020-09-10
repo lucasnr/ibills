@@ -6,6 +6,6 @@ export const ForgotPasswordContainer = styled.TouchableOpacity`
 
 export const ForgotPassword = styled.Text`
 	color: ${({ theme }) => theme.text.secondary};
-	font-family: 'VisbyRoundLight';
+	font-family: ${({ theme }) => theme.font.primary.light};
 	font-size: 12px;
 `;
