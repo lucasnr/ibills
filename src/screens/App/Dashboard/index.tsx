@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components/native';
 
-import TopBar from '~/components/TopBar';
+import Container from '~/components/AppScreenContainer';
 import ScrollContainer from '~/components/ScrollContainer';
 import Subtitle from '~/components/Subtitle';
 import CommonReports from '~/components/CommonReports';
 import { Card, CardContainer } from '~/components/CommonReports/styles';
 
-import { Container, CardIcon, CardText } from './styles';
+import { CardIcon, CardText } from './styles';
 import WelcomeHeader from './WelcomeHeader';
 import Transactions from './Transactions';
 
@@ -19,8 +19,7 @@ const Dashboard: React.FC = () => {
 	const { text } = useContext(ThemeContext);
 
 	return (
-		<Container showsVerticalScrollIndicator={false}>
-			<TopBar />
+		<Container>
 			<WelcomeHeader />
 
 			<ScrollContainer>
