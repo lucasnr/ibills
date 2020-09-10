@@ -1,15 +1,21 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
-	justify-content: space-between;
+export const Container = styled.ScrollView.attrs({
+	showsVerticalScrollIndicator: false,
+	contentContainerStyle: {
+		justifyContent: 'space-between',
+		paddingBottom: 16,
+		paddingLeft: 16,
+		paddingTop: 32,
+		flexGrow: 1,
+	},
+})`
 	flex-grow: 1;
-	padding: 32px 16px;
-	padding-right: 0px;
 `;
 
 export const ItemsContainer = styled.View`
-	justify-content: center;
 	flex-grow: 1;
+	justify-content: center;
 `;
 
 interface Props {
@@ -29,7 +35,7 @@ export const Item = styled.TouchableOpacity<Props>`
 
 export const ItemLabel = styled.Text<Props>`
 	color: ${({ theme: { text }, active }) =>
-		active ? text.title : text.secondary};
+		active ? text.alternative : text.secondary};
 	font-family: 'VisbyRoundRegular';
 	font-size: 14px;
 	margin-left: 8px;

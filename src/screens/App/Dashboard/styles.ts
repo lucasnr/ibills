@@ -1,10 +1,21 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
-	flex-grow: 1;
+export const Container = styled.ScrollView.attrs({
+	contentContainerStyle: {
+		paddingHorizontal: 10,
+		paddingBottom: 20,
+	},
+})``;
+
+export const CardIcon = styled.Image`
+	height: 20px;
+	margin-right: 14px;
+	width: 20px;
+	resize-mode: contain;
 `;
 
-export const Text = styled.Text`
-	font-family: 'VisbyRoundHeavy';
-	font-size: 32px;
+export const CardText = styled.Text`
+	color: ${({ theme }) => theme.colors.primary};
+	font-size: 14px;
+	font-family: 'VisbyRoundMedium';
 `;

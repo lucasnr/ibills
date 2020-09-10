@@ -1,7 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
 import { AppLoading } from 'expo';
-import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -28,7 +27,6 @@ export default function App() {
 		<ThemeProvider theme={light}>
 			{/* <HomeScreen /> */}
 			<AppScreens />
-			<StatusBar style="dark" backgroundColor="#fff" translucent={false} />
 		</ThemeProvider>
 	);
 }

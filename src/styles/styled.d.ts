@@ -11,11 +11,12 @@ declare module 'styled-components' {
 		text: {
 			primary: string;
 			secondary: string;
-			title: string;
+			alternative: string;
 		};
 		colors: {
 			primary: string;
 			secondary: string;
+			alternative: string;
 		};
 	}
 }

@@ -4,6 +4,7 @@ import React, {
 	Dispatch,
 	SetStateAction,
 } from 'react';
+import { ScrollView } from 'react-native';
 
 interface SignUpData {
 	name: string;
@@ -61,7 +62,23 @@ const Provider: React.FC = ({ children }) => {
 	const [data, setData] = useState<SignUpData>(defaultSignUpData);
 
 	return (
-		<Context.Provider value={{ data, setData }}>{children}</Context.Provider>
+		<Context.Provider value={{ data, setData }}>
+			<ScrollView
+				showsVerticalScrollIndicator={false}
+				style={{
+					marginVertical: -22,
+					marginHorizontal: -44,
+				}}
+				contentContainerStyle={{
+					paddingVertical: 22,
+					paddingHorizontal: 44,
+					justifyContent: 'center',
+					flexGrow: 1,
+				}}
+			>
+				{children}
+			</ScrollView>
+		</Context.Provider>
 	);
 };
 

@@ -10,11 +10,12 @@ const theme: DefaultTheme = {
 	text: {
 		primary: '#2C3D36',
 		secondary: '#7C828A',
-		title: '#118252',
+		alternative: '#118252',
 	},
 	colors: {
 		primary: '#F99645',
 		secondary: '#26C6DA',
+		alternative: '#79D2DE',
 	},
 };
 

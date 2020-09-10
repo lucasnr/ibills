@@ -109,7 +109,7 @@ const CustomDrawer: React.FC<DrawerContentComponentProps> = ({
 							active={active}
 						>
 							<IconContainer>
-								<Icon color={active ? text.title : text.secondary} />
+								<Icon color={active ? text.alternative : text.secondary} />
 							</IconContainer>
 							<ItemLabel active={active}>{label}</ItemLabel>
 						</Item>
@@ -119,7 +119,7 @@ const CustomDrawer: React.FC<DrawerContentComponentProps> = ({
 
 			<Item onPress={signOut}>
 				<IconContainer>
-					<Exit color={text.title} />
+					<Exit color={text.alternative} />
 				</IconContainer>
 				<ItemLabel>Sair</ItemLabel>
 			</Item>

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { StatusBar } from 'expo-status-bar';
 
 import Dashboard from './Dashboard';
 import Profile from './Profile';
@@ -26,6 +27,7 @@ function Routes() {
 				drawerContent={(props) => <CustomDrawer {...props} />}
 				drawerStyle={{
 					borderTopRightRadius: 100,
+					overflow: 'hidden',
 					width: 'auto',
 				}}
 				sceneContainerStyle={{ backgroundColor: background.secondary }}
@@ -40,6 +42,8 @@ function Routes() {
 				<Drawer.Screen name="Reports" component={Reports} />
 				<Drawer.Screen name="Settings" component={Settings} />
 			</Drawer.Navigator>
+
+			<StatusBar backgroundColor={background.secondary} translucent={false} />
 		</NavigationContainer>
 	);
 }
