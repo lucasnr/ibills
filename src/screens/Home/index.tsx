@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Animated, ViewStyle, StyleProp } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 import Header from '~/components/Header';
 import { Container, Main, Rocket, Finance } from './styles';
@@ -63,6 +64,8 @@ const Home: React.FC = () => {
 
 			<Rocket />
 			<Finance style={{ resizeMode: 'contain' }} />
+
+			<StatusBar backgroundColor="#fff" translucent={false} style="dark" />
 		</Container>
 	);
 };
