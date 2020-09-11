@@ -23,6 +23,8 @@ function Routes() {
 
 	return (
 		<NavigationContainer>
+			<StatusBar backgroundColor={background.secondary} translucent={false} />
+
 			<Drawer.Navigator
 				drawerContent={(props) => <CustomDrawer {...props} />}
 				drawerStyle={{
@@ -42,8 +44,6 @@ function Routes() {
 				<Drawer.Screen name="Reports" component={Reports} />
 				<Drawer.Screen name="Settings" component={Settings} />
 			</Drawer.Navigator>
-
-			<StatusBar backgroundColor={background.secondary} translucent={false} />
 		</NavigationContainer>
 	);
 }

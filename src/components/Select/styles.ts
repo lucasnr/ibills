@@ -38,8 +38,15 @@ interface OptionProps {
 export const Option = styled.Text<OptionProps>`
 	color: ${({ theme: { text, colors }, selected }) =>
 		selected ? colors.secondary : text.primary};
-	font-family: ${({ theme }) => theme.font.primary.medium};
+	font-family: ${({ theme }) => theme.font.secondary.bold};
 	font-size: 14px;
 	padding: 16px;
 	text-transform: uppercase;
+`;
+
+export const Description = styled.Text`
+	color: ${({ theme }) => theme.text.secondary};
+	font-family: ${({ theme }) => theme.font.secondary.bold};
+	font-size: 12px;
+	padding: 10px 16px;
 `;

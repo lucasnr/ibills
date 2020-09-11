@@ -7,7 +7,7 @@ import { Container } from './styles';
 const AppScreenContainer: React.FC = ({ children }) => {
 	return (
 		<Container showsVerticalScrollIndicator={false}>
-			<TopBar />
+			<TopBar style={{ marginLeft: -20 }} />
 			{children}
 		</Container>
 	);

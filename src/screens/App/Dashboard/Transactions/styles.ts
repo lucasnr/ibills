@@ -3,11 +3,11 @@ import styled from 'styled-components/native';
 export const Container = styled.ScrollView.attrs({
 	contentContainerStyle: {
 		flexDirection: 'column',
-		paddingHorizontal: 10,
+		paddingHorizontal: 20,
 	},
 })`
 	border-radius: 5px;
-	margin: 0px -10px;
+	margin: 0px -20px;
 `;
 
 export const Transaction = styled.View`

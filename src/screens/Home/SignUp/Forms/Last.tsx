@@ -21,7 +21,7 @@ const LastForm = () => {
 				style={{ marginBottom: 10 }}
 				value={housing}
 				onChangeText={(housing) => setData((prev) => ({ ...prev, housing }))}
-				options={['Casa', 'Apartamento', 'Vila']}
+				options={['Casa Própria', 'Apartamento', 'Casa Alugada']}
 			/>
 			<Input
 				placeholder="Quantas pessoas moram com você?"

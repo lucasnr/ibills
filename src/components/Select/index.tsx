@@ -9,6 +9,7 @@ import {
 	ModalContent,
 	OptionsContainer,
 	Option,
+	Description,
 } from './styles';
 
 interface Props extends TextInputProps {
@@ -21,6 +22,7 @@ const Select: React.FC<Props> = ({
 	style,
 	options,
 	value: initialValue,
+	editable = true,
 }) => {
 	const [visible, setVisible] = useState(false);
 	const [value, setValue] = useState(initialValue || '');
@@ -30,8 +32,8 @@ const Select: React.FC<Props> = ({
 	}, [value]);
 
 	const show = useCallback(() => {
-		setVisible(true);
-	}, []);
+		if (editable) setVisible(true);
+	}, [editable]);
 
 	const dismiss = useCallback(() => {
 		setVisible(false);
@@ -47,11 +49,9 @@ const Select: React.FC<Props> = ({
 			{value.length > 0 ? (
 				<Text>{value}</Text>
 			) : (
-				<>
-					<Placeholder>{placeholder}</Placeholder>
-					<Icon name="chevron-down" size={20} color="#F99645" />
-				</>
+				<Placeholder>{placeholder}</Placeholder>
 			)}
+			<Icon name="chevron-down" size={20} color="#F99645" />
 
 			<Modal
 				transparent={true}
@@ -61,6 +61,8 @@ const Select: React.FC<Props> = ({
 			>
 				<ModalContent>
 					<OptionsContainer>
+						<Description>{placeholder}</Description>
+
 						{options.map((option, index) => (
 							<TouchableOpacity key={index} onPress={() => onSelect(option)}>
 								<Option selected={option === value}>{option}</Option>

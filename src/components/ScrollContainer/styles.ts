@@ -2,10 +2,11 @@ import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView.attrs({
 	contentContainerStyle: {
-		paddingHorizontal: 10,
+		paddingHorizontal: 20,
 	},
 })`
 	flex-grow: 0;
-	margin: 0px -10px;
 	margin-bottom: 20px;
+	margin-left: -20px;
+	margin-right: -20px;
 `;
