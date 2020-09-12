@@ -4,6 +4,15 @@ import { View } from 'react-native';
 import Container from '~/components/AppScreenContainer';
 import Subtitle from '~/components/Subtitle';
 import { Card, CardContainer } from '~/components/Card';
+import {
+	Table,
+	TableRow,
+	TableHead,
+	TableHeadText,
+	TableColumn,
+	TableColumnText,
+	TableIcon,
+} from '~/components/Table';
 
 import {
 	Header,
@@ -12,13 +21,6 @@ import {
 	ImageIcon,
 	CardButton,
 	CardButtonText,
-	Table,
-	TableRow,
-	TableHead,
-	TableHeadText,
-	TableColumn,
-	TableColumnText,
-	TableIcon,
 } from './styles';
 
 import glasshour from '~/assets/img/glasshour-icon.png';
