@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card, CardContainer } from '~/components/AppScreenContainer';
+import { Card, CardContainer } from '~/components/Card';
 import ScrollContainer from '~/components/ScrollContainer';
 import Subtitle from '~/components/Subtitle';
 import Row from '~/components/Row';
@@ -17,30 +17,30 @@ const CommonReports: React.FC = () => {
 	return (
 		<>
 			<ScrollContainer>
-				<Card>
+				<CardContainer>
 					<Subtitle text="Despesas por Categoria" />
-					<CardContainer>
+					<Card>
 						<CategoryExpenses />
-					</CardContainer>
-				</Card>
+					</Card>
+				</CardContainer>
 
-				<Card>
+				<CardContainer>
 					<Subtitle text="Receitas por Categoria" />
-					<CardContainer>
+					<Card>
 						<CategoryRevenue />
-					</CardContainer>
-				</Card>
+					</Card>
+				</CardContainer>
 			</ScrollContainer>
 
 			<ScrollContainer>
-				<Card style={{ marginRight: 20 }}>
+				<CardContainer style={{ marginRight: 20 }}>
 					<Subtitle text="Percentual do Objetivo" />
-					<CardContainer>
+					<Card>
 						<GoalPercentage percentage={58} />
-					</CardContainer>
-				</Card>
+					</Card>
+				</CardContainer>
 
-				<Card>
+				<CardContainer>
 					<Subtitle text="Consumo" />
 					<Row>
 						<ConsumptionCard
@@ -56,7 +56,7 @@ const CommonReports: React.FC = () => {
 							period="7h às 17:59h"
 						/>
 					</Row>
-				</Card>
+				</CardContainer>
 			</ScrollContainer>
 		</>
 	);

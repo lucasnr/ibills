@@ -9,9 +9,15 @@ export const Container = styled.TouchableOpacity`
 	padding: 14px;
 `;
 
+export const Icon = styled.Image`
+	height: 14px;
+	margin-right: 8px;
+	resize-mode: contain;
+	width: 14px;
+`;
+
 export const Text = styled.Text`
 	color: ${({ theme }) => theme.text.alternative};
 	font-family: ${({ theme }) => theme.font.primary.medium};
 	font-size: 12px;
-	margin-left: 8px;
 `;

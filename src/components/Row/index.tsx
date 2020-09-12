@@ -1,9 +1,14 @@
 import React from 'react';
+import { ViewStyle } from 'react-native';
 
 import { Container } from './styles';
 
-const Row: React.FC = ({ children }) => {
-	return <Container>{children}</Container>;
+interface Props {
+	style?: ViewStyle;
+}
+
+const Row: React.FC<Props> = ({ children, style }) => {
+	return <Container style={style}>{children}</Container>;
 };
 
 export default Row;

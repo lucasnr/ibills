@@ -2,7 +2,7 @@ import React from 'react';
 
 import TopBar from '~/components/TopBar';
 
-import { Container, Card, CardContainer } from './styles';
+import { Container } from './styles';
 import { padding } from './consts';
 
 const AppScreenContainer: React.FC = ({ children }) => {
@@ -16,4 +16,4 @@ const AppScreenContainer: React.FC = ({ children }) => {
 
 export default AppScreenContainer;
 
-export { Card, CardContainer, padding };
+export { padding };

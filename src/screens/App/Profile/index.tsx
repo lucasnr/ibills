@@ -6,19 +6,12 @@ import ScrollContainer from '~/components/ScrollContainer';
 import Row from '~/components/Row';
 import Input from '~/components/Input';
 import Select from '~/components/Select';
+import { CardButton, CardLabel, CardTitle } from '~/components/Card';
 
-import FormButton from './FormButton';
-import {
-	Avatar,
-	AvatarButton,
-	AvatarButtonText,
-	Name,
-	Form,
-	Title,
-	Label,
-} from './styles';
+import { Avatar, AvatarButton, AvatarButtonText, Name, Form } from './styles';
 
 import user from '~/assets/img/user.png';
+import edit from '~/assets/img/edit-icon.png';
 
 const Profile: React.FC = () => {
 	return (
@@ -37,22 +30,22 @@ const Profile: React.FC = () => {
 
 			<ScrollContainer>
 				<Form>
-					<Title>Informações Gerais</Title>
+					<CardTitle>Informações Gerais</CardTitle>
 
-					<Label>Nome Completo</Label>
+					<CardLabel>Nome Completo</CardLabel>
 					<Input
 						autoCompleteType="name"
 						textContentType="name"
 						placeholder="Nome Completo"
 					/>
 
-					<Label>Sexo</Label>
+					<CardLabel>Sexo</CardLabel>
 					<Select
 						placeholder="Sexo"
 						options={['Masculino', 'Feminino', 'Outro']}
 					/>
 
-					<Label>Data de Nascimento</Label>
+					<CardLabel>Data de Nascimento</CardLabel>
 					<Input
 						options={{
 							format: 'DD/MM/YYYY',
@@ -61,7 +54,7 @@ const Profile: React.FC = () => {
 						placeholder="Data de Nascimento"
 					/>
 
-					<Label>Telefone</Label>
+					<CardLabel>Telefone</CardLabel>
 					<Input
 						maskType="cel-phone"
 						keyboardType="phone-pad"
@@ -69,16 +62,16 @@ const Profile: React.FC = () => {
 						placeholder="Telefone"
 					/>
 
-					<Label>Nacionalidade</Label>
+					<CardLabel>Nacionalidade</CardLabel>
 					<Select
 						placeholder="Nacionalidade"
 						options={['Brasileiro', 'Estrangeiro', 'Naturalizado']}
 					/>
 
-					<Label>CPF</Label>
+					<CardLabel>CPF</CardLabel>
 					<Input maskType={'cpf'} placeholder="CPF" />
 
-					<Label>CEP</Label>
+					<CardLabel>CEP</CardLabel>
 					<Input
 						maskType="custom"
 						options={{
@@ -88,45 +81,45 @@ const Profile: React.FC = () => {
 						placeholder="CEP"
 					/>
 
-					<FormButton text="Editar Dados" />
+					<CardButton iconSource={edit} text="Editar Dados" />
 				</Form>
 
 				<Form>
-					<Title>Informações Financeiras</Title>
+					<CardTitle>Informações Financeiras</CardTitle>
 
-					<Label>Qual seu tipo de moradia?</Label>
+					<CardLabel>Qual seu tipo de moradia?</CardLabel>
 					<Select
 						placeholder="Tipo de moradia"
 						options={['Casa Própria', 'Apartamento', 'Casa Alugada']}
 					/>
 
-					<Label>Quantos cartões de crédito você possui?</Label>
+					<CardLabel>Quantos cartões de crédito você possui?</CardLabel>
 					<Input
 						maskType="only-numbers"
 						keyboardType="number-pad"
 						placeholder="Número de cartões de crédito"
 					/>
 
-					<Label>Qual tipo de veículo?</Label>
+					<CardLabel>Qual tipo de veículo?</CardLabel>
 					<Input placeholder="Tipo de veiculo" />
 
-					<Label>Quantas pessoas moram com você?</Label>
+					<CardLabel>Quantas pessoas moram com você?</CardLabel>
 					<Input
 						maskType="only-numbers"
 						keyboardType="number-pad"
 						placeholder="Quantidade de pessoas"
 					/>
 
-					<Label>Possui veículo próprio?</Label>
+					<CardLabel>Possui veículo próprio?</CardLabel>
 					<Select placeholder="Possui veiculo?" options={['Sim', 'Não']} />
 
-					<FormButton text="Editar Dados" />
+					<CardButton iconSource={edit} text="Editar Dados" />
 				</Form>
 
 				<Form>
-					<Title>Informações Profissionais</Title>
+					<CardTitle>Informações Profissionais</CardTitle>
 
-					<Label>Escolaridade</Label>
+					<CardLabel>Escolaridade</CardLabel>
 					<Select
 						placeholder="Escolaridade"
 						options={[
@@ -137,19 +130,19 @@ const Profile: React.FC = () => {
 						]}
 					/>
 
-					<Label>Profissão</Label>
+					<CardLabel>Profissão</CardLabel>
 					<Select
 						placeholder="Profissão"
 						options={['Administrador', 'Advogado', 'Engenheiro', 'Médico']}
 					/>
 
-					<Label>Relação de Emprego</Label>
+					<CardLabel>Relação de Emprego</CardLabel>
 					<Select
 						placeholder="Relação de Emprego"
 						options={['Estágio', 'CLT', 'PJ']}
 					/>
 
-					<Label>Faixa de Renda Mensal</Label>
+					<CardLabel>Faixa de Renda Mensal</CardLabel>
 					<Select
 						placeholder="Faixa de Renda Mensal"
 						options={[
@@ -159,7 +152,7 @@ const Profile: React.FC = () => {
 						]}
 					/>
 
-					<FormButton text="Editar Dados" />
+					<CardButton iconSource={edit} text="Editar Dados" />
 				</Form>
 			</ScrollContainer>
 		</Container>

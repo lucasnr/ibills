@@ -1,11 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import Container, {
-	Card,
-	CardContainer,
-} from '~/components/AppScreenContainer';
+import Container from '~/components/AppScreenContainer';
 import Subtitle from '~/components/Subtitle';
+import { Card, CardContainer } from '~/components/Card';
 
 import {
 	Header,
@@ -31,9 +29,9 @@ import clock from '~/assets/img/clock-icon.png';
 const Signature: React.FC = () => {
 	return (
 		<Container>
-			<Card>
+			<CardContainer>
 				<Subtitle text="Assinatura Inativa" />
-				<CardContainer>
+				<Card>
 					<Header>
 						<ImageIcon size={22} source={glasshour} />
 						<View>
@@ -46,8 +44,8 @@ const Signature: React.FC = () => {
 						<ImageIcon size={12} source={reload} />
 						<CardButtonText>Renovar Assinatura</CardButtonText>
 					</CardButton>
-				</CardContainer>
-			</Card>
+				</Card>
+			</CardContainer>
 
 			<Table>
 				<TableRow>

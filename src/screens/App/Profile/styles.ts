@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import { Card } from '~/components/Card';
+
 export const Avatar = styled.Image`
 	border-radius: 180px;
 	border-color: ${({ theme }) => theme.text.alternative};
@@ -37,24 +39,8 @@ export const AvatarButtonText = styled.Text`
 	margin-left: 8px;
 `;
 
-export const Form = styled.View`
-	background-color: ${({ theme }) => theme.background.primary};
+export const Form = styled(Card)`
 	margin-bottom: auto;
 	margin-right: 20px;
-	padding: 16px;
 	width: 300px;
-`;
-
-export const Title = styled.Text`
-	color: ${({ theme }) => theme.text.alternative};
-	font-family: ${({ theme }) => theme.font.primary.semiBold};
-	font-size: 14px;
-`;
-
-export const Label = styled.Text`
-	color: ${({ theme }) => theme.text.primary};
-	font-family: ${({ theme }) => theme.font.primary.regular};
-	font-size: 12px;
-	margin-bottom: 5px;
-	margin-top: 20px;
 `;
