@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
 	background-color: ${({ theme }) => theme.background.primary};
 	border-radius: 5px;
-	margin-right: 8px;
+	margin-right: 10px;
 	padding: 16px 12px;
 	width: 135px;
 `;

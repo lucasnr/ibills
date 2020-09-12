@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components/native';
 import Button from './CardButton';
 
 export const CardContainer = styled.View`
-	margin-right: 10px;
+	margin-right: 20px;
 `;
 
 interface CardProps {

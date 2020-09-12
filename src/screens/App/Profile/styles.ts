@@ -41,6 +41,5 @@ export const AvatarButtonText = styled.Text`
 
 export const Form = styled(Card)`
 	margin-bottom: auto;
-	margin-right: 20px;
 	width: 300px;
 `;
