@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Card, CardContainer } from '~/components/AppScreenContainer';
 import ScrollContainer from '~/components/ScrollContainer';
 import Subtitle from '~/components/Subtitle';
 import Row from '~/components/Row';
@@ -8,8 +9,6 @@ import ConsumptionCard from './ConsumptionCard';
 import GoalPercentage from './GoalPercentage';
 import CategoryRevenue from './CategoryRevenue';
 import CategoryExpenses from './CategoryExpenses';
-
-import { Card, CardContainer } from './styles';
 
 import moon from '~/assets/img/moon.png';
 import sun from '~/assets/img/sun.png';

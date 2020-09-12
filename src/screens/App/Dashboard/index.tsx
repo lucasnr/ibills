@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components/native';
 
-import Container from '~/components/AppScreenContainer';
+import Container, {
+	Card,
+	CardContainer,
+} from '~/components/AppScreenContainer';
 import ScrollContainer from '~/components/ScrollContainer';
 import Subtitle from '~/components/Subtitle';
 import CommonReports from '~/components/CommonReports';
-import { Card, CardContainer } from '~/components/CommonReports/styles';
 
 import { CardIcon, CardText } from './styles';
 import WelcomeHeader from './WelcomeHeader';
@@ -25,7 +27,7 @@ const Dashboard: React.FC = () => {
 			<ScrollContainer>
 				<Card>
 					<Subtitle text="Receitas" />
-					<CardContainer>
+					<CardContainer row>
 						<CardIcon source={graphUpwards} />
 						<CardText style={{ color: text.alternative }}>R$6.420,00</CardText>
 					</CardContainer>
@@ -33,7 +35,7 @@ const Dashboard: React.FC = () => {
 
 				<Card>
 					<Subtitle text="Despesas" />
-					<CardContainer>
+					<CardContainer row>
 						<CardIcon source={graphDownwards} />
 						<CardText>R$4.238,90</CardText>
 					</CardContainer>
@@ -41,7 +43,7 @@ const Dashboard: React.FC = () => {
 
 				<Card>
 					<Subtitle text="Cartão de Crédito" />
-					<CardContainer>
+					<CardContainer row>
 						<CardIcon source={cash} />
 						<CardText>R$4.238,90</CardText>
 					</CardContainer>

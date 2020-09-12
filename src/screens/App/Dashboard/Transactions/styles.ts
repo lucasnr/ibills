@@ -1,13 +1,15 @@
 import styled from 'styled-components/native';
 
+import { padding } from '~/components/AppScreenContainer';
+
 export const Container = styled.ScrollView.attrs({
 	contentContainerStyle: {
 		flexDirection: 'column',
-		paddingHorizontal: 20,
+		paddingHorizontal: padding,
 	},
 })`
 	border-radius: 5px;
-	margin: 0px -20px;
+	margin: 0px -${padding}px;
 `;
 
 export const Transaction = styled.View`
