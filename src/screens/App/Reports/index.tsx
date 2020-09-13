@@ -1,11 +1,14 @@
 import React from 'react';
 
-import { Container, Text } from './styles';
+import Container from '~/components/AppScreenContainer';
+import DashboardReports from '~/components/DashboardReports';
+import ExpensesRevenueReports from '~/components/ExpensesRevenueReports';
 
 const Reports: React.FC = () => {
 	return (
 		<Container>
-			<Text>Reports</Text>
+			<DashboardReports />
+			<ExpensesRevenueReports />
 		</Container>
 	);
 };
