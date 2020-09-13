@@ -7,8 +7,7 @@ import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import HomeScreen from './src/screens/Home';
-import AppScreens from './src/screens/App/routes';
+import Routes from './src/routes';
 
 import light from './src/styles/themes/light';
 
@@ -35,8 +34,7 @@ export default function App() {
 
 	return (
 		<ThemeProvider theme={light}>
-			{/* <HomeScreen /> */}
-			<AppScreens />
+			<Routes />
 		</ThemeProvider>
 	);
 }

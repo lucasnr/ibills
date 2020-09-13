@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StatusBar } from 'expo-status-bar';
 
@@ -22,7 +21,7 @@ function Routes() {
 	const { background } = useContext(ThemeContext);
 
 	return (
-		<NavigationContainer>
+		<React.Fragment>
 			<StatusBar backgroundColor={background.secondary} translucent={false} />
 
 			<Drawer.Navigator
@@ -44,7 +43,7 @@ function Routes() {
 				<Drawer.Screen name="Reports" component={Reports} />
 				<Drawer.Screen name="Settings" component={Settings} />
 			</Drawer.Navigator>
-		</NavigationContainer>
+		</React.Fragment>
 	);
 }
 

@@ -1,5 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import FirstForm from './Forms/First';
 import SecondForm from './Forms/Second';
@@ -34,10 +35,15 @@ const SignUp: React.FC<Props> = ({ active, setActive }) => {
 		if (active !== 'SignUp-Next') setIndex(0);
 	}, [active]);
 
+	const navigation = useNavigation();
 	const next = useCallback(() => {
 		setActive('SignUp-Next');
 		if (index < 3) setIndex((prev) => prev + 1);
-	}, [setActive, index]);
+		else
+			navigation.reset({
+				routes: [{ name: 'App' }],
+			});
+	}, [setActive, index, navigation]);
 
 	return (
 		<Provider>

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import Input from '~/components/Input';
 import Button from '~/components/Button';
@@ -18,6 +19,13 @@ import facebook from '~/assets/img/facebook.png';
 import apple from '~/assets/img/apple.png';
 
 const Login: React.FC = () => {
+	const navigation = useNavigation();
+	const login = useCallback(() => {
+		navigation.reset({
+			routes: [{ name: 'App' }],
+		});
+	}, [navigation]);
+
 	return (
 		<>
 			<Title>Seja bem-vindo de volta!</Title>
@@ -35,7 +43,7 @@ const Login: React.FC = () => {
 				style={{ marginBottom: 16 }}
 			/>
 
-			<Button text="Login" onPress={() => {}} />
+			<Button text="Login" onPress={login} />
 
 			<ForgotPasswordContainer>
 				<ForgotPassword>Esqueceu sua senha?</ForgotPassword>

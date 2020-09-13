@@ -84,8 +84,14 @@ const CustomDrawer: React.FC<DrawerContentComponentProps> = ({
 	}, []);
 
 	const signOut = useCallback(() => {
-		// logout
-	}, []);
+		navigation.reset({
+			routes: [
+				{
+					name: 'Home',
+				},
+			],
+		});
+	}, [navigation]);
 
 	const navigationState = navigation.dangerouslyGetState();
 	const currentRoute = useMemo(() => {
