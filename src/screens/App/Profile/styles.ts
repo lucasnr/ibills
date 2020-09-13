@@ -40,6 +40,7 @@ export const AvatarButtonText = styled.Text`
 `;
 
 export const Form = styled(Card)`
+	flex-grow: 0;
 	margin-bottom: auto;
 	width: 300px;
 `;
