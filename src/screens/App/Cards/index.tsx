@@ -1,5 +1,6 @@
 import React from 'react';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native';
 
 import Container from '~/components/AppScreenContainer';
 import ScrollContainer from '~/components/ScrollContainer';
@@ -36,7 +37,6 @@ import save from '~/assets/img/save-icon.png';
 import currency from '~/assets/img/currency-icon.png';
 import cashSymbol from '~/assets/img/cash-symbol-icon.png';
 import moneyBag from '~/assets/img/moneybag-icon.png';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Cards: React.FC = () => {
 	return (

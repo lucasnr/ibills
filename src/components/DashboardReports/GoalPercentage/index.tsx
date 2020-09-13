@@ -28,7 +28,6 @@ const GoalPercentage: React.FC<Props> = ({ percentage }) => {
 				/>
 			}
 			content={<ChartText>{percentage}%</ChartText>}
-			style={{ marginRight: 0 }}
 		/>
 	);
 };
