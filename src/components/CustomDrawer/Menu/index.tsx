@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { DrawerActions, NavigationProp } from '@react-navigation/native';
+
+import { Image } from './styles';
 
 import menu from '~/assets/img/menu-icon.png';
 

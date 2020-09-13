@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StatusBar } from 'expo-status-bar';
 
