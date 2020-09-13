@@ -1,10 +1,19 @@
 import React from 'react';
+import { ViewStyle } from 'react-native';
 
 import { Container } from './styles';
 
-const ScrollContainer: React.FC = ({ children }) => {
+interface Props {
+	style?: ViewStyle;
+}
+
+const ScrollContainer: React.FC<Props> = ({ children, style }) => {
 	return (
-		<Container horizontal={true} showsHorizontalScrollIndicator={false}>
+		<Container
+			horizontal={true}
+			showsHorizontalScrollIndicator={false}
+			style={style}
+		>
 			{children}
 		</Container>
 	);

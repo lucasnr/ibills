@@ -11,6 +11,7 @@ export const Caption = styled.Text`
 `;
 
 export const Legend = styled.View`
+	margin-left: 16px;
 	margin-right: 20px;
 `;
 

@@ -13,7 +13,7 @@ import CategoryExpenses from './CategoryExpenses';
 import moon from '~/assets/img/moon.png';
 import sun from '~/assets/img/sun.png';
 
-const CommonReports: React.FC = () => {
+const DashboardReports: React.FC = () => {
 	return (
 		<>
 			<ScrollContainer>
@@ -62,4 +62,4 @@ const CommonReports: React.FC = () => {
 	);
 };
 
-export default CommonReports;
+export default DashboardReports;

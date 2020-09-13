@@ -1,12 +1,7 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
-	align-items: center;
-	flex-grow: 1;
-	justify-content: center;
-`;
+import { TableColumnText } from '~/components/Table';
 
-export const Text = styled.Text`
-	font-family: 'VisbyRoundHeavy';
-	font-size: 32px;
+export const Situation = styled(TableColumnText)`
+	color: ${({ danger = false }) => (danger ? '#FF3614' : '#32B947')};
 `;

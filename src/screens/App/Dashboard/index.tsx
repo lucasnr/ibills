@@ -4,7 +4,7 @@ import { ThemeContext } from 'styled-components/native';
 import Container from '~/components/AppScreenContainer';
 import ScrollContainer from '~/components/ScrollContainer';
 import Subtitle from '~/components/Subtitle';
-import CommonReports from '~/components/CommonReports';
+import DashboardReports from '~/components/DashboardReports';
 import { Card, CardContainer, CardIcon, CardText } from '~/components/Card';
 
 import WelcomeHeader from './WelcomeHeader';
@@ -47,7 +47,7 @@ const Dashboard: React.FC = () => {
 				</CardContainer>
 			</ScrollContainer>
 
-			<CommonReports />
+			<DashboardReports />
 
 			<Subtitle text="Últimas Transações" />
 			<Transactions />

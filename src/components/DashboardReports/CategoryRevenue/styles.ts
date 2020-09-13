@@ -5,6 +5,7 @@ export const Container = styled.View`
 `;
 
 export const Legend = styled.View`
+	margin-left: 16px;
 	margin-right: 20px;
 `;
 

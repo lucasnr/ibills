@@ -40,9 +40,15 @@ export const TableColumn = styled(TableHead)`
 	padding: 12px;
 `;
 
-export const TableColumnText = styled(TableHeadText)`
-	color: ${({ theme }) => theme.text.primary};
-	font-family: ${({ theme }) => theme.font.primary.regular};
+interface TableColumnTextProps {
+	danger?: boolean;
+}
+
+export const TableColumnText = styled(TableHeadText)<TableColumnTextProps>`
+	color: ${({ theme: { text }, danger = false }) =>
+		danger ? '#FF3614' : text.primary};
+	font-family: ${({ theme: { font }, danger = false }) =>
+		danger ? font.primary.bold : font.primary.regular};
 `;
 
 interface TableIconProps {

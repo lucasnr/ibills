@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { ThemeContext } from 'styled-components/native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 
@@ -14,12 +14,13 @@ import {
 } from './styles';
 
 import { getByKey } from '~/utils/colors';
+import { formatMoney } from '~/utils/format';
 
 interface ITransaction {
 	timestamp: string;
 	name: string;
 	type: string;
-	value: string;
+	value: number;
 	income: boolean;
 	label: 'home' | 'education' | 'others' | 'credit' | 'food';
 }
@@ -29,7 +30,7 @@ const transactions: ITransaction[] = [
 		timestamp: 'Hoje',
 		name: 'Lojas Americanas',
 		type: 'Débito',
-		value: 'R$ 30,00',
+		value: 30,
 		income: false,
 		label: 'others',
 	},
@@ -37,7 +38,7 @@ const transactions: ITransaction[] = [
 		timestamp: 'Hoje',
 		name: 'Supermercado Estrela',
 		type: 'Débito',
-		value: 'R$ 450,00',
+		value: 450,
 		income: false,
 		label: 'food',
 	},
@@ -45,7 +46,7 @@ const transactions: ITransaction[] = [
 		timestamp: '26.08',
 		name: 'Farmácia Panvel',
 		type: 'Crédito',
-		value: 'R$ 87,50',
+		value: 87.5,
 		income: false,
 		label: 'others',
 	},
@@ -53,7 +54,7 @@ const transactions: ITransaction[] = [
 		timestamp: '26.08',
 		name: 'Colégio Educacional P',
 		type: 'Boleto',
-		value: 'R$ 1.050,00',
+		value: 1050,
 		income: false,
 		label: 'education',
 	},
@@ -61,7 +62,7 @@ const transactions: ITransaction[] = [
 		timestamp: '26.08',
 		name: 'CCAA',
 		type: 'Boleto',
-		value: 'R$ 1.050,00',
+		value: 1050,
 		income: false,
 		label: 'education',
 	},
@@ -69,7 +70,7 @@ const transactions: ITransaction[] = [
 		timestamp: '24.08',
 		name: 'Luiza Pereira Gomes',
 		type: 'Transferência',
-		value: 'R$ 3.000,00',
+		value: 3000,
 		income: true,
 		label: 'home',
 	},
@@ -77,7 +78,7 @@ const transactions: ITransaction[] = [
 		timestamp: '24.08',
 		name: 'Lojas Americanas',
 		type: 'Salário',
-		value: 'R$ 9.000,00',
+		value: 9000,
 		income: true,
 		label: 'others',
 	},
@@ -86,9 +87,16 @@ const transactions: ITransaction[] = [
 const Transactions: React.FC = () => {
 	const { text, colors } = useContext(ThemeContext);
 
+	const formattedData = useMemo(() => {
+		return transactions.map((item) => ({
+			...item,
+			value: formatMoney(item.value),
+		}));
+	}, []);
+
 	return (
 		<Container horizontal={true} showsHorizontalScrollIndicator={false}>
-			{transactions.map((item, index) => (
+			{formattedData.map((item, index) => (
 				<Transaction key={index}>
 					<BulletContainer>
 						<Bullet color={getByKey(item.label)} />
