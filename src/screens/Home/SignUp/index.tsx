@@ -1,5 +1,4 @@
 import React, { useCallback, useState, useEffect } from 'react';
-import { Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import FirstForm from './Forms/First';
@@ -15,6 +14,7 @@ import {
 	SeparatorText,
 	SocialMedia,
 	SocialMediaItem,
+	SocialMediaIcon,
 } from '../styles';
 
 import google from '~/assets/img/google.png';
@@ -66,15 +66,15 @@ const SignUp: React.FC<Props> = ({ active, setActive }) => {
 
 					<SocialMedia>
 						<SocialMediaItem>
-							<Image source={google} />
+							<SocialMediaIcon source={google} />
 						</SocialMediaItem>
 
 						<SocialMediaItem>
-							<Image source={facebook} />
+							<SocialMediaIcon source={facebook} />
 						</SocialMediaItem>
 
 						<SocialMediaItem>
-							<Image source={apple} />
+							<SocialMediaIcon source={apple} />
 						</SocialMediaItem>
 					</SocialMedia>
 				</>

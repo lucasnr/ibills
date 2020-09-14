@@ -3,6 +3,7 @@ import 'intl/locale-data/jsonp/pt-BR';
 
 import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
+import { ThemeProvider as ThemeProviderWeb } from 'styled-components';
 import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -34,7 +35,9 @@ export default function App() {
 
 	return (
 		<ThemeProvider theme={light}>
-			<Routes />
+			<ThemeProviderWeb theme={light}>
+				<Routes />
+			</ThemeProviderWeb>
 		</ThemeProvider>
 	);
 }

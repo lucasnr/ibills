@@ -51,6 +51,12 @@ export const SocialMedia = styled.View`
 	justify-content: space-between;
 `;
 
+export const SocialMediaIcon = styled.Image`
+	height: 20px;
+	resize-mode: contain;
+	width: 20px;
+`;
+
 export const SocialMediaItem = styled.TouchableOpacity.attrs({
 	activeOpacity: 0.6,
 })`

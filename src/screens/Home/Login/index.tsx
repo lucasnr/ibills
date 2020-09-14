@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-import { Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Input from '~/components/Input';
@@ -11,6 +10,7 @@ import {
 	SeparatorText,
 	SocialMedia,
 	SocialMediaItem,
+	SocialMediaIcon,
 } from '../styles';
 import { ForgotPasswordContainer, ForgotPassword } from './styles';
 
@@ -57,15 +57,15 @@ const Login: React.FC = () => {
 
 			<SocialMedia>
 				<SocialMediaItem>
-					<Image source={google} />
+					<SocialMediaIcon source={google} />
 				</SocialMediaItem>
 
 				<SocialMediaItem>
-					<Image source={facebook} />
+					<SocialMediaIcon source={facebook} />
 				</SocialMediaItem>
 
 				<SocialMediaItem>
-					<Image source={apple} />
+					<SocialMediaIcon source={apple} />
 				</SocialMediaItem>
 			</SocialMedia>
 		</>
