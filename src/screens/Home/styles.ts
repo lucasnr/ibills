@@ -71,9 +71,10 @@ export const Rocket = styled.Image.attrs({
 	source: rocket,
 })`
 	bottom: 0px;
-	height: 50%;
+	height: 387px;
 	left: -40%;
 	position: absolute;
+	width: 438px;
 	z-index: -10;
 `;
 
@@ -81,8 +82,9 @@ export const Finance = styled.Image.attrs({
 	source: finance,
 })`
 	bottom: -4px;
-	height: 26%;
+	height: 201px;
 	position: absolute;
 	right: -15%;
-	z-index: -5;
+	width: 232px;
+	z-index: -15;
 `;
