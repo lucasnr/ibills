@@ -52,7 +52,7 @@ const Home: React.FC = () => {
 							{
 								translateY: opacity.interpolate({
 									inputRange: [0, 1],
-									outputRange: [0, 20],
+									outputRange: [-20, 0],
 								}),
 							},
 						],

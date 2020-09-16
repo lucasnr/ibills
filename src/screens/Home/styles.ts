@@ -1,10 +1,12 @@
 import styled from 'styled-components/native';
 import { Dimensions, StatusBar } from 'react-native';
 
+import { isDesktop } from '~/utils/consts';
+
 import rocket from '~/assets/img/illustration-rocket.png';
 import finance from '~/assets/img/illustration-finance.png';
 
-const { height } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 
 export const Container = styled.ScrollView.attrs({
 	contentContainerStyle: {
@@ -16,7 +18,10 @@ export const Container = styled.ScrollView.attrs({
 
 export const Main = styled.View`
 	flex-grow: 1;
+	margin: 0px auto;
+	max-width: ${isDesktop ? '576px' : 'auto'};
 	position: relative;
+	width: 100%;
 `;
 
 export const Title = styled.Text`
@@ -71,20 +76,20 @@ export const Rocket = styled.Image.attrs({
 	source: rocket,
 })`
 	bottom: 0px;
-	height: 387px;
-	left: -40%;
+	height: ${isDesktop ? 708 : 387}px;
+	left: ${isDesktop ? 0 : -40}%;
 	position: absolute;
-	width: 438px;
+	width: ${isDesktop ? 740 : 438}px;
 	z-index: -10;
 `;
 
 export const Finance = styled.Image.attrs({
 	source: finance,
 })`
-	bottom: -4px;
-	height: 201px;
+	bottom: 0px;
+	height: ${isDesktop ? 396 : 201}px;
 	position: absolute;
-	right: -15%;
-	width: 232px;
+	right: ${isDesktop ? 0 : -15}%;
+	width: ${isDesktop ? 423 : 232}px;
 	z-index: -15;
 `;
