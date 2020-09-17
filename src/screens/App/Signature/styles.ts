@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import { padding } from '~/components/AppScreenContainer';
+import illustration from '~/assets/img/illustration-signature.png';
 
 export const Header = styled.View`
 	align-items: center;
@@ -44,4 +44,14 @@ export const CardButtonText = styled.Text`
 	color: ${({ theme }) => theme.colors.secondary};
 	font-family: ${({ theme }) => theme.font.primary.medium};
 	font-size: 12px;
+`;
+
+export const SignatureIllustration = styled.Image.attrs({
+	source: illustration,
+})`
+	bottom: 20px;
+	height: 250px;
+	left: 20px;
+	position: fixed;
+	width: 340px;
 `;
