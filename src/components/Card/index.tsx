@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components/native';
 
 import Button from './CardButton';
 
+import { isDesktop } from '~/utils/consts';
+
 export const CardContainer = styled.View`
 	margin-right: 20px;
 `;
@@ -30,15 +32,19 @@ interface CardIconProps {
 }
 
 export const CardIcon = styled.Image<CardIconProps>`
-	height: ${({ size = 20 }) => size}px;
+	height: ${({ size }) => size}px;
 	margin-right: 14px;
-	width: ${({ size = 20 }) => size}px;
+	width: ${({ size }) => size}px;
 	resize-mode: contain;
 `;
 
+CardIcon.defaultProps = {
+	size: isDesktop ? 24 : 20,
+};
+
 export const CardText = styled.Text`
 	color: ${({ theme }) => theme.colors.primary};
-	font-size: 14px;
+	font-size: ${isDesktop ? 16 : 14}px;
 	font-family: ${({ theme }) => theme.font.primary.medium};
 `;
 
