@@ -6,5 +6,6 @@ export const Container = styled.ScrollView.attrs({
 	contentContainerStyle: {
 		paddingHorizontal: padding,
 		paddingBottom: 20,
+		paddingTop: 20,
 	},
 })``;

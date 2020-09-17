@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useContext } from 'react';
 import { ThemeContext } from 'styled-components/native';
-import { DrawerContentComponentProps } from '@react-navigation/drawer';
+import { NavigationProp } from '@react-navigation/native';
 import { SvgProps } from 'react-native-svg';
 
 import Menu from './Menu';
@@ -21,6 +21,10 @@ import {
 	ItemLabel,
 	IconContainer,
 } from './styles';
+
+import Row from '~/components/Row';
+
+import { isDesktop } from '~/utils/consts';
 
 interface Item {
 	icon: React.FC<SvgProps>;
@@ -76,9 +80,11 @@ const items: Item[] = [
 	},
 ];
 
-const CustomDrawer: React.FC<DrawerContentComponentProps> = ({
-	navigation,
-}) => {
+interface Props {
+	navigation: NavigationProp;
+}
+
+const CustomDrawer: React.FC<Props> = ({ navigation }) => {
 	const itemCallback = useCallback((route: string) => {
 		navigation.navigate(route);
 	}, []);
@@ -103,32 +109,34 @@ const CustomDrawer: React.FC<DrawerContentComponentProps> = ({
 
 	return (
 		<Container>
-			<Menu navigation={navigation} />
+			{!isDesktop && <Menu navigation={navigation} />}
 
-			<ItemsContainer>
-				{items.map(({ route, icon: Icon, label }) => {
-					const active = route === currentRoute;
-					return (
-						<Item
-							key={route}
-							onPress={() => itemCallback(route)}
-							active={active}
-						>
-							<IconContainer>
-								<Icon color={active ? text.alternative : text.secondary} />
-							</IconContainer>
-							<ItemLabel active={active}>{label}</ItemLabel>
-						</Item>
-					);
-				})}
-			</ItemsContainer>
+			<Row desktopOnly style={{ justifyContent: 'space-between' }}>
+				<ItemsContainer>
+					{items.map(({ route, icon: Icon, label }) => {
+						const active = route === currentRoute;
+						return (
+							<Item
+								key={route}
+								onPress={() => itemCallback(route)}
+								active={active}
+							>
+								<IconContainer>
+									<Icon color={active ? text.alternative : text.secondary} />
+								</IconContainer>
+								<ItemLabel active={active}>{label}</ItemLabel>
+							</Item>
+						);
+					})}
+				</ItemsContainer>
 
-			<Item onPress={signOut}>
-				<IconContainer>
-					<Exit color={text.alternative} />
-				</IconContainer>
-				<ItemLabel>Sair</ItemLabel>
-			</Item>
+				<Item onPress={signOut}>
+					<IconContainer>
+						<Exit color={text.alternative} />
+					</IconContainer>
+					{!isDesktop && <ItemLabel>Sair</ItemLabel>}
+				</Item>
+			</Row>
 		</Container>
 	);
 };

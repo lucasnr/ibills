@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TopBar from '~/components/TopBar';
+import MenuButton from '~/components/MenuButton';
 
 import { Container } from './styles';
 import { padding } from './consts';
@@ -8,7 +8,7 @@ import { padding } from './consts';
 const AppScreenContainer: React.FC = ({ children }) => {
 	return (
 		<Container showsVerticalScrollIndicator={false}>
-			<TopBar style={{ marginLeft: padding * -1 }} />
+			<MenuButton style={{ marginLeft: padding * -1 }} />
 			{children}
 		</Container>
 	);

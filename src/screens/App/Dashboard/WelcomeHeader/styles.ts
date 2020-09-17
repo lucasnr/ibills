@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 import illustration from '~/assets/img/illustration-dashboard.png';
 
+import { isDesktop } from '~/utils/consts';
+
 export const Wrapper = styled.View`
 	align-items: flex-end;
 	background-color: ${({ theme }) => theme.background.primary};
@@ -29,12 +31,14 @@ export const Name = styled(Greetings)`
 export const Caption = styled.Text`
 	color: ${({ theme }) => theme.text.secondary};
 	font-family: ${({ theme }) => theme.font.primary.regular};
-	font-size: 12px;
+	font-size: ${isDesktop ? 14 : 12}px;
 	padding-right: 16px;
 `;
 
 export const Illustration = styled.Image.attrs({
 	source: illustration,
 })`
-	width: 35%;
+	height: 77px;
+	margin-left: auto;
+	width: 130px;
 `;

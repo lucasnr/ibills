@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { StatusBar } from 'expo-status-bar';
 
 import Dashboard from './Dashboard';
@@ -13,9 +14,51 @@ import Goal from './Goal';
 import Reports from './Reports';
 import Settings from './Settings';
 
-import CustomDrawer from '~/components/CustomDrawer';
+import CustomMenu from '~/components/CustomMenu';
+
+import { isDesktop } from '~/utils/consts';
 
 const Drawer = createDrawerNavigator();
+const TopBar = createMaterialTopTabNavigator();
+
+const routes = [
+	{
+		name: 'Dashboard',
+		component: Dashboard,
+	},
+	{
+		name: 'Profile',
+		component: Profile,
+	},
+	{
+		name: 'Signature',
+		component: Signature,
+	},
+	{
+		name: 'Accounts',
+		component: Accounts,
+	},
+	{
+		name: 'Cards',
+		component: Cards,
+	},
+	{
+		name: 'Expenses',
+		component: Expenses,
+	},
+	{
+		name: 'Goal',
+		component: Goal,
+	},
+	{
+		name: 'Reports',
+		component: Reports,
+	},
+	{
+		name: 'Settings',
+		component: Settings,
+	},
+];
 
 function Routes() {
 	const { background } = useContext(ThemeContext);
@@ -24,25 +67,39 @@ function Routes() {
 		<React.Fragment>
 			<StatusBar backgroundColor={background.secondary} translucent={false} />
 
-			<Drawer.Navigator
-				drawerContent={(props) => <CustomDrawer {...props} />}
-				drawerStyle={{
-					borderTopRightRadius: 100,
-					overflow: 'hidden',
-					width: 'auto',
-				}}
-				sceneContainerStyle={{ backgroundColor: background.secondary }}
-			>
-				<Drawer.Screen name="Dashboard" component={Dashboard} />
-				<Drawer.Screen name="Profile" component={Profile} />
-				<Drawer.Screen name="Signature" component={Signature} />
-				<Drawer.Screen name="Accounts" component={Accounts} />
-				<Drawer.Screen name="Cards" component={Cards} />
-				<Drawer.Screen name="Expenses" component={Expenses} />
-				<Drawer.Screen name="Goal" component={Goal} />
-				<Drawer.Screen name="Reports" component={Reports} />
-				<Drawer.Screen name="Settings" component={Settings} />
-			</Drawer.Navigator>
+			{isDesktop ? (
+				<TopBar.Navigator
+					tabBar={(props) => <CustomMenu {...props} />}
+					swipeEnabled={false}
+					initialRouteName="Profile"
+				>
+					{routes.map((route, index) => (
+						<TopBar.Screen
+							key={index}
+							name={route.name}
+							component={route.component}
+						/>
+					))}
+				</TopBar.Navigator>
+			) : (
+				<Drawer.Navigator
+					drawerContent={(props) => <CustomMenu {...props} />}
+					drawerStyle={{
+						borderTopRightRadius: 100,
+						overflow: 'hidden',
+						width: 'auto',
+					}}
+					sceneContainerStyle={{ backgroundColor: background.secondary }}
+				>
+					{routes.map((route, index) => (
+						<Drawer.Screen
+							key={index}
+							name={route.name}
+							component={route.component}
+						/>
+					))}
+				</Drawer.Navigator>
+			)}
 		</React.Fragment>
 	);
 }
