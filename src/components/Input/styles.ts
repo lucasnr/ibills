@@ -9,7 +9,7 @@ export const containerStyle = css`
 	color: ${({ theme }) => theme.text.primary};
 	font-family: ${({ theme }) => theme.font.primary.regular};
 	font-size: 13px;
-	height: 50px;
+	height: 45px;
 	padding: 10px 8px;
 `;
 

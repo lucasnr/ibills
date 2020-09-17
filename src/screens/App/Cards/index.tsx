@@ -47,7 +47,7 @@ const Cards: React.FC = () => {
 	if (isDesktop)
 		return (
 			<Container>
-				<Row>
+				<ScrollContainer>
 					<View style={{ marginRight: 20 }}>
 						<Row>
 							<CardContainer>
@@ -168,55 +168,57 @@ const Cards: React.FC = () => {
 						</CardContainer>
 					</View>
 
-					<Card style={{ width: '100%', maxWidth: 500, marginLeft: 20 }}>
-						<CardTitle>Adicionar Novo Cartão</CardTitle>
+					<View style={{ marginLeft: 20, marginBottom: 'auto' }}>
+						<Card style={{ width: 550 }}>
+							<CardTitle>Adicionar Novo Cartão</CardTitle>
 
-						<Row cols>
-							<RowCol>
-								<CardLabel>Limite</CardLabel>
-								<Input />
-							</RowCol>
+							<Row cols>
+								<RowCol>
+									<CardLabel>Limite</CardLabel>
+									<Input />
+								</RowCol>
 
-							<RowCol>
-								<CardLabel>Vencimento da Fatura</CardLabel>
-								<Input />
-							</RowCol>
-						</Row>
+								<RowCol>
+									<CardLabel>Vencimento da Fatura</CardLabel>
+									<Input />
+								</RowCol>
+							</Row>
 
-						<Row cols>
-							<RowCol>
-								<CardLabel>Emissora do Cartão</CardLabel>
-								<Select options={['Visa', 'Mastercard']} />
-							</RowCol>
+							<Row cols>
+								<RowCol>
+									<CardLabel>Emissora do Cartão</CardLabel>
+									<Select options={['Visa', 'Mastercard']} />
+								</RowCol>
 
-							<RowCol>
-								<CardLabel>Fechamento da Fatura</CardLabel>
-								<Input />
-							</RowCol>
-						</Row>
+								<RowCol>
+									<CardLabel>Fechamento da Fatura</CardLabel>
+									<Input />
+								</RowCol>
+							</Row>
 
-						<Row cols>
-							<RowCol>
-								<CardLabel>Descrição do Cartão</CardLabel>
-								<Input />
-							</RowCol>
+							<Row cols>
+								<RowCol>
+									<CardLabel>Descrição do Cartão</CardLabel>
+									<Input />
+								</RowCol>
 
-							<RowCol>
-								<CardLabel>Debitar Lançamentos</CardLabel>
-								<Select options={['Carteira']} />
-							</RowCol>
-						</Row>
+								<RowCol>
+									<CardLabel>Debitar Lançamentos</CardLabel>
+									<Select options={['Carteira']} />
+								</RowCol>
+							</Row>
 
-						<Row style={{ marginTop: 20 }}>
-							<CardIcon source={cash} size={36} />
-							<CardButton
-								iconSource={save}
-								text="Salvar e adicionar"
-								style={{ marginTop: 0, marginLeft: 'auto' }}
-							/>
-						</Row>
-					</Card>
-				</Row>
+							<Row style={{ marginTop: 20 }}>
+								<CardIcon source={cash} size={36} />
+								<CardButton
+									iconSource={save}
+									text="Salvar e adicionar"
+									style={{ marginTop: 0, marginLeft: 'auto' }}
+								/>
+							</Row>
+						</Card>
+					</View>
+				</ScrollContainer>
 
 				<CardIllustration />
 				<ShoppingIllustration />

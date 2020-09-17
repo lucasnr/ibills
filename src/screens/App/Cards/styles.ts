@@ -61,17 +61,17 @@ export const CardIllustration = styled.Image.attrs({
 	source: cardIllustration,
 })`
 	bottom: 20px;
-	height: 204px;
+	height: 170px;
 	right: 20px;
 	position: fixed;
-	width: 222px;
+	width: 184px;
 `;
 
 export const ShoppingIllustration = styled(CardIllustration).attrs({
 	source: shoppingIllustration,
 })`
-	height: 292px;
-	right: 195px;
-	width: 150px;
+	height: 242px;
+	right: 160px;
+	width: 124px;
 	z-index: -5;
 `;
