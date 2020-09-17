@@ -15,6 +15,7 @@ interface CardProps {
 const rowStyle = css`
 	align-items: center;
 	flex-direction: row;
+	width: ${isDesktop ? '100%' : 'auto'};
 `;
 
 export const Card = styled.View<CardProps>`

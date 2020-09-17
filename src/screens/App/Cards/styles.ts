@@ -2,6 +2,11 @@ import styled from 'styled-components/native';
 
 import Row from '~/components/Row';
 
+import { isDesktop } from '~/utils/consts';
+
+import cardIllustration from '~/assets/img/illustration-creditcard.png';
+import shoppingIllustration from '~/assets/img/illustration-shopping.png';
+
 export const BankRow = styled(Row)`
 	justify-content: space-between;
 	margin-top: 20px;
@@ -10,7 +15,7 @@ export const BankRow = styled(Row)`
 export const Status = styled.Text`
 	color: ${({ theme }) => theme.text.primary};
 	font-family: ${({ theme }) => theme.font.secondary.bold};
-	font-size: 12px;
+	font-size: ${isDesktop ? 14 : 12}px;
 `;
 
 export const StatusDate = styled(Status)`
@@ -47,7 +52,26 @@ export const Progress = styled(ProgressBar)<ProgressProps>`
 `;
 
 export const ProgressLabel = styled(Status)`
-	font-size: 10px;
+	font-size: ${isDesktop ? 12 : 10}px;
 	margin-bottom: 20px;
 	margin-top: 4px;
+`;
+
+export const CardIllustration = styled.Image.attrs({
+	source: cardIllustration,
+})`
+	bottom: 20px;
+	height: 204px;
+	right: 20px;
+	position: fixed;
+	width: 222px;
+`;
+
+export const ShoppingIllustration = styled(CardIllustration).attrs({
+	source: shoppingIllustration,
+})`
+	height: 292px;
+	right: 195px;
+	width: 150px;
+	z-index: -5;
 `;
