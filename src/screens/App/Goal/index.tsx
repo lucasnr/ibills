@@ -24,8 +24,10 @@ import {
 } from '~/components/Table';
 import Select from '~/components/Select';
 import Input from '~/components/Input';
-
+import { GoalsContainer, GoalForm } from './WebComponents';
 import { Legend, LegendText } from './styles';
+
+import { isDesktop } from '~/utils/consts';
 
 import target from '~/assets/img/target-icon.png';
 import save from '~/assets/img/save-icon.png';
@@ -42,107 +44,120 @@ import trashBtn from '~/assets/img/trash-icon.png';
 
 const Goal: React.FC = () => {
 	return (
-		<Container>
-			<ScrollContainer>
-				<CardContainer>
-					<Subtitle text="Porcentual do Objetivo: Quitar Dívidas" />
-					<Card>
-						<Row>
-							<GoalPercentage percentage={58} />
+		<Container
+			style={
+				isDesktop && {
+					flexDirection: 'row',
+					flexWrap: 'wrap',
+				}
+			}
+		>
+			<GoalsContainer>
+				<ScrollContainer>
+					<CardContainer>
+						<Subtitle text="Porcentual do Objetivo: Quitar Dívidas" />
+						<Card>
+							<Row>
+								<GoalPercentage percentage={58} />
 
-							<Legend>
-								<Row>
-									<CardIcon source={coins} />
-									<LegendText danger>Valor Atual: R$8.700,00</LegendText>
-								</Row>
-								<Row>
-									<CardIcon source={moneyBag} />
-									<LegendText>Valor Final: R$15.000,00</LegendText>
-								</Row>
-								<Row>
-									<CardIcon source={calendar} />
-									<LegendText>Data: 10/10/2020</LegendText>
-								</Row>
-							</Legend>
-						</Row>
+								<Legend>
+									<Row>
+										<CardIcon source={coins} />
+										<LegendText danger>Valor Atual: R$8.700,00</LegendText>
+									</Row>
+									<Row>
+										<CardIcon source={moneyBag} />
+										<LegendText>Valor Final: R$15.000,00</LegendText>
+									</Row>
+									<Row>
+										<CardIcon source={calendar} />
+										<LegendText>Data: 10/10/2020</LegendText>
+									</Row>
+								</Legend>
+							</Row>
 
-						<Row style={{ justifyContent: 'flex-end' }}>
-							<CardButton
-								iconSource={editBtn}
-								text="Editar"
-								style={{ marginRight: 8 }}
-							/>
-							<CardButton iconSource={trashBtn} text="Excluir" />
-						</Row>
-					</Card>
-				</CardContainer>
+							<Row style={{ justifyContent: 'flex-end' }}>
+								<CardButton
+									iconSource={editBtn}
+									text="Editar"
+									style={{ marginRight: 8 }}
+								/>
+								<CardButton iconSource={trashBtn} text="Excluir" />
+							</Row>
+						</Card>
+					</CardContainer>
 
-				<CardContainer>
-					<Subtitle text="Porcentual do Objetivo: Quitar Dívidas" />
-					<Card>
-						<Row>
-							<GoalPercentage percentage={58} />
+					<CardContainer>
+						<Subtitle text="Porcentual do Objetivo: Festa de Casamento" />
+						<Card>
+							<Row>
+								<GoalPercentage
+									percentage={25}
+									color="#BE63F9"
+									background="#f4e3ff"
+								/>
 
-							<Legend>
-								<Row>
-									<CardIcon source={coins} />
-									<LegendText danger>Valor Atual: R$8.700,00</LegendText>
-								</Row>
-								<Row>
-									<CardIcon source={moneyBag} />
-									<LegendText>Valor Final: R$15.000,00</LegendText>
-								</Row>
-								<Row>
-									<CardIcon source={calendar} />
-									<LegendText>Data: 10/10/2020</LegendText>
-								</Row>
-							</Legend>
-						</Row>
+								<Legend>
+									<Row>
+										<CardIcon source={coins} />
+										<LegendText danger>Valor Atual: R$10.500,00</LegendText>
+									</Row>
+									<Row>
+										<CardIcon source={moneyBag} />
+										<LegendText>Valor Final: R$42.000,00</LegendText>
+									</Row>
+									<Row>
+										<CardIcon source={calendar} />
+										<LegendText>Data: 07/07/2022</LegendText>
+									</Row>
+								</Legend>
+							</Row>
 
-						<Row style={{ justifyContent: 'flex-end' }}>
-							<CardButton
-								iconSource={editBtn}
-								text="Editar"
-								style={{ marginRight: 8 }}
-							/>
-							<CardButton iconSource={trashBtn} text="Excluir" />
-						</Row>
-					</Card>
-				</CardContainer>
+							<Row style={{ justifyContent: 'flex-end' }}>
+								<CardButton
+									iconSource={editBtn}
+									text="Editar"
+									style={{ marginRight: 8 }}
+								/>
+								<CardButton iconSource={trashBtn} text="Excluir" />
+							</Row>
+						</Card>
+					</CardContainer>
 
-				<CardContainer>
-					<Subtitle text="Porcentual do Objetivo: Quitar Dívidas" />
-					<Card>
-						<Row>
-							<GoalPercentage percentage={58} />
+					<CardContainer>
+						<Subtitle text="Porcentual do Objetivo: Quitar Dívidas" />
+						<Card>
+							<Row>
+								<GoalPercentage percentage={58} />
 
-							<Legend>
-								<Row>
-									<CardIcon source={coins} />
-									<LegendText danger>Valor Atual: R$8.700,00</LegendText>
-								</Row>
-								<Row>
-									<CardIcon source={moneyBag} />
-									<LegendText>Valor Final: R$15.000,00</LegendText>
-								</Row>
-								<Row>
-									<CardIcon source={calendar} />
-									<LegendText>Data: 10/10/2020</LegendText>
-								</Row>
-							</Legend>
-						</Row>
+								<Legend>
+									<Row>
+										<CardIcon source={coins} />
+										<LegendText danger>Valor Atual: R$8.700,00</LegendText>
+									</Row>
+									<Row>
+										<CardIcon source={moneyBag} />
+										<LegendText>Valor Final: R$15.000,00</LegendText>
+									</Row>
+									<Row>
+										<CardIcon source={calendar} />
+										<LegendText>Data: 10/10/2020</LegendText>
+									</Row>
+								</Legend>
+							</Row>
 
-						<Row style={{ justifyContent: 'flex-end' }}>
-							<CardButton
-								iconSource={editBtn}
-								text="Editar"
-								style={{ marginRight: 8 }}
-							/>
-							<CardButton iconSource={trashBtn} text="Excluir" />
-						</Row>
-					</Card>
-				</CardContainer>
-			</ScrollContainer>
+							<Row style={{ justifyContent: 'flex-end' }}>
+								<CardButton
+									iconSource={editBtn}
+									text="Editar"
+									style={{ marginRight: 8 }}
+								/>
+								<CardButton iconSource={trashBtn} text="Excluir" />
+							</Row>
+						</Card>
+					</CardContainer>
+				</ScrollContainer>
+			</GoalsContainer>
 
 			<Table>
 				<TableRow>
@@ -238,46 +253,48 @@ const Goal: React.FC = () => {
 				</TableRow>
 			</Table>
 
-			<Card style={{ width: '100%', marginTop: 20 }}>
-				<CardTitle>Adicionar Novo Objetivo</CardTitle>
-				<Row cols>
-					<RowCol>
-						<CardLabel>Qual seu objetivo?</CardLabel>
-						<Select options={['Objetivo 1', 'Objetivo 2']} />
-					</RowCol>
+			<GoalForm>
+				<Card style={{ width: '100%', marginTop: 20 }}>
+					<CardTitle>Adicionar Novo Objetivo</CardTitle>
+					<Row cols>
+						<RowCol>
+							<CardLabel>Qual seu objetivo?</CardLabel>
+							<Select options={['Objetivo 1', 'Objetivo 2']} />
+						</RowCol>
 
-					<RowCol>
-						<CardLabel>Descrição do Objetivo</CardLabel>
-						<Input />
-					</RowCol>
-				</Row>
+						<RowCol>
+							<CardLabel>Descrição do Objetivo</CardLabel>
+							<Input />
+						</RowCol>
+					</Row>
 
-				<Row cols>
-					<RowCol>
-						<CardLabel>Valor Final</CardLabel>
-						<Input />
-					</RowCol>
+					<Row cols>
+						<RowCol>
+							<CardLabel>Valor Final</CardLabel>
+							<Input />
+						</RowCol>
 
-					<RowCol>
-						<CardLabel>Data</CardLabel>
-						<Input
-							options={{
-								format: 'DD/MM/YYYY',
-							}}
-							maskType="datetime"
+						<RowCol>
+							<CardLabel>Data</CardLabel>
+							<Input
+								options={{
+									format: 'DD/MM/YYYY',
+								}}
+								maskType="datetime"
+							/>
+						</RowCol>
+					</Row>
+
+					<Row style={{ marginTop: 20, justifyContent: 'space-between' }}>
+						<CardIcon source={target} size={36} />
+						<CardButton
+							style={{ marginTop: 0 }}
+							iconSource={save}
+							text="Salvar e adicionar"
 						/>
-					</RowCol>
-				</Row>
-
-				<Row style={{ marginTop: 20, justifyContent: 'space-between' }}>
-					<CardIcon source={target} size={36} />
-					<CardButton
-						style={{ marginTop: 0 }}
-						iconSource={save}
-						text="Salvar e adicionar"
-					/>
-				</Row>
-			</Card>
+					</Row>
+				</Card>
+			</GoalForm>
 		</Container>
 	);
 };

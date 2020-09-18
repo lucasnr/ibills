@@ -1,19 +1,31 @@
 import React from 'react';
+import { ScrollView, ViewStyle, StyleProp } from 'react-native';
 
 import MenuButton from '~/components/MenuButton';
 
-import { Container } from './styles';
-import { padding } from './consts';
+export const padding = 20;
 
-const AppScreenContainer: React.FC = ({ children }) => {
+interface Props {
+	style?: StyleProp<ViewStyle>;
+}
+
+const AppScreenContainer: React.FC<Props> = ({ children, style }) => {
 	return (
-		<Container showsVerticalScrollIndicator={false}>
+		<ScrollView
+			showsVerticalScrollIndicator={false}
+			contentContainerStyle={[
+				{
+					paddingHorizontal: padding,
+					paddingBottom: 20,
+					paddingTop: 20,
+				},
+				style,
+			]}
+		>
 			<MenuButton style={{ marginLeft: padding * -1 }} />
 			{children}
-		</Container>
+		</ScrollView>
 	);
 };
 
 export default AppScreenContainer;
-
-export { padding };

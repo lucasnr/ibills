@@ -6,9 +6,11 @@ import ChartContainer, { ChartText } from '~/components/ChartContainer';
 
 interface Props {
 	percentage: number;
+	color?: string;
+	background?: string;
 }
 
-const GoalPercentage: React.FC<Props> = ({ percentage }) => {
+const GoalPercentage: React.FC<Props> = ({ percentage, color, background }) => {
 	const { colors } = useContext(ThemeContext);
 	const size = 100;
 
@@ -21,8 +23,8 @@ const GoalPercentage: React.FC<Props> = ({ percentage }) => {
 						width: size,
 					}}
 					progress={percentage / 100}
-					progressColor={colors.alternative}
-					backgroundColor="#f0fdfd"
+					progressColor={color || colors.alternative}
+					backgroundColor={background || '#f0fdfd'}
 					strokeWidth={20}
 					cornerRadius={0}
 				/>

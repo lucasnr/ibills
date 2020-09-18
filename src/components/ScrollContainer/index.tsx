@@ -7,7 +7,7 @@ import { Container } from './styles';
 import { isDesktop } from '~/utils/consts';
 
 interface Props {
-	style?: ViewStyle;
+	style?: StyleProp<ViewStyle>;
 	contentContainerStyle?: StyleProp<ViewStyle>;
 	mobileOnly?: boolean;
 }
