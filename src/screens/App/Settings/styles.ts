@@ -3,6 +3,8 @@ import styled from 'styled-components/native';
 import { Card, CardTitle } from '~/components/Card';
 import Row from '~/components/Row';
 
+import { isDesktop } from '~/utils/consts';
+
 export const CheckboxRow = styled(Row)`
 	padding: 4px 0px;
 `;
@@ -23,6 +25,7 @@ export const CheckboxLabel = styled(CheckboxSectionSubtitle)`
 
 export const Form = styled(Card)`
 	flex-grow: 0;
+	margin-bottom: ${isDesktop ? '20px' : 'auto'};
 `;
 
 export const FormTitle = styled(CardTitle)`
