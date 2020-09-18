@@ -1,18 +1,21 @@
 import React from 'react';
-import { ViewStyle } from 'react-native';
+import { ViewStyle, StyleProp } from 'react-native';
+
+import { padding } from '~/components/AppScreenContainer';
+import { Container } from './styles';
 
 import { isDesktop } from '~/utils/consts';
 
-import { Container } from './styles';
-
 interface Props {
 	style?: ViewStyle;
+	contentContainerStyle?: StyleProp<ViewStyle>;
 	mobileOnly?: boolean;
 }
 
 const ScrollContainer: React.FC<Props> = ({
 	children,
 	style,
+	contentContainerStyle,
 	mobileOnly = false,
 }) => {
 	if (mobileOnly && isDesktop) return <>{children}</>;
@@ -22,6 +25,10 @@ const ScrollContainer: React.FC<Props> = ({
 			horizontal={true}
 			showsHorizontalScrollIndicator={false}
 			style={style}
+			contentContainerStyle={[
+				contentContainerStyle,
+				{ paddingHorizontal: padding },
+			]}
 		>
 			{children}
 		</Container>

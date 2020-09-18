@@ -19,6 +19,7 @@ import { CardButton } from '~/components/Card';
 import { Situation } from './styles';
 
 import { formatMoney } from '~/utils/format';
+import { isDesktop } from '~/utils/consts';
 
 import edit from '~/assets/img/edit-alt-icon.png';
 import trash from '~/assets/img/delete-icon.png';
@@ -92,7 +93,16 @@ const Expenses: React.FC = () => {
 		<Container>
 			<ExpensesRevenueReports />
 
-			<ScrollContainer style={{ marginBottom: 0 }}>
+			<ScrollContainer
+				style={{ marginBottom: 0 }}
+				contentContainerStyle={
+					isDesktop && {
+						justifyContent: 'flex-end',
+						maxWidth: 1368,
+						width: '100%',
+					}
+				}
+			>
 				<CardButton
 					iconSource={currency}
 					text="Adicionar Despesa"
@@ -127,7 +137,7 @@ const Expenses: React.FC = () => {
 							</TouchableOpacity>
 						</Row>
 					</TableHead>
-					<TableHead>
+					<TableHead width={100}>
 						<Row>
 							<TableHeadText>Data</TableHeadText>
 							<TouchableOpacity>
@@ -158,7 +168,7 @@ const Expenses: React.FC = () => {
 							</TouchableOpacity>
 						</Row>
 					</TableHead>
-					<TableHead>
+					<TableHead width={120}>
 						<TableHeadText>Ações</TableHeadText>
 					</TableHead>
 				</TableRow>
@@ -180,7 +190,7 @@ const Expenses: React.FC = () => {
 								{item.danger ? 'Em Atraso' : 'Em Dia'}
 							</Situation>
 						</TableColumn>
-						<TableColumn>
+						<TableColumn width={100}>
 							<TableColumnText danger={item.danger}>
 								{item.datetime}
 							</TableColumnText>
@@ -205,7 +215,7 @@ const Expenses: React.FC = () => {
 								{item.formattedValue}
 							</TableColumnText>
 						</TableColumn>
-						<TableColumn>
+						<TableColumn width={120}>
 							<Row>
 								<TableIcon source={edit} />
 								<TableIcon source={trash} style={{ marginLeft: 8 }} />
