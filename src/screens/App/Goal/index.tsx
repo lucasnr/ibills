@@ -49,7 +49,7 @@ const Goal: React.FC = () => {
 			}
 		>
 			<GoalsContainer>
-				<ScrollContainer showScrollbar>
+				<ScrollContainer showScrollbar={isDesktop}>
 					<CardContainer>
 						<Subtitle text="Porcentual do Objetivo: Quitar Dívidas" />
 						<Card>

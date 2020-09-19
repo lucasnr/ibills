@@ -70,7 +70,6 @@ function Routes() {
 			{isDesktop ? (
 				<TopBar.Navigator
 					tabBar={(props) => <CustomMenu {...props} />}
-					initialRouteName="Signature"
 					swipeEnabled={false}
 				>
 					{routes.map((route, index) => (
