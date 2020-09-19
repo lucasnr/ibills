@@ -20,27 +20,23 @@ import {
 	TableHeadText,
 	TableColumn,
 	TableColumnText,
-	TableIcon,
 } from '~/components/Table';
 import Select from '~/components/Select';
 import Input from '~/components/Input';
+
 import { GoalsContainer, GoalForm } from './WebComponents';
 import { Legend, LegendText } from './styles';
+import { Pause, Edit, Trash, Check, Search } from './Actions';
 
 import { isDesktop } from '~/utils/consts';
 
 import target from '~/assets/img/target-icon.png';
 import save from '~/assets/img/save-icon.png';
-import pause from '~/assets/img/actions/pause-icon.png';
-import edit from '~/assets/img/actions/edit-icon.png';
-import trash from '~/assets/img/actions/delete-icon.png';
-import check from '~/assets/img/actions/check-icon.png';
-import search from '~/assets/img/actions/search-icon.png';
 import coins from '~/assets/img/coins-icon.png';
 import moneyBag from '~/assets/img/moneybag-alt-icon.png';
 import calendar from '~/assets/img/calendar-icon.png';
-import editBtn from '~/assets/img/edit-icon.png';
-import trashBtn from '~/assets/img/trash-icon.png';
+import edit from '~/assets/img/edit-icon.png';
+import trash from '~/assets/img/trash-icon.png';
 
 const Goal: React.FC = () => {
 	return (
@@ -78,11 +74,11 @@ const Goal: React.FC = () => {
 
 							<Row style={{ justifyContent: 'flex-end' }}>
 								<CardButton
-									iconSource={editBtn}
+									iconSource={edit}
 									text="Editar"
 									style={{ marginRight: 8 }}
 								/>
-								<CardButton iconSource={trashBtn} text="Excluir" />
+								<CardButton iconSource={trash} text="Excluir" />
 							</Row>
 						</Card>
 					</CardContainer>
@@ -115,11 +111,11 @@ const Goal: React.FC = () => {
 
 							<Row style={{ justifyContent: 'flex-end' }}>
 								<CardButton
-									iconSource={editBtn}
+									iconSource={edit}
 									text="Editar"
 									style={{ marginRight: 8 }}
 								/>
-								<CardButton iconSource={trashBtn} text="Excluir" />
+								<CardButton iconSource={trash} text="Excluir" />
 							</Row>
 						</Card>
 					</CardContainer>
@@ -148,11 +144,11 @@ const Goal: React.FC = () => {
 
 							<Row style={{ justifyContent: 'flex-end' }}>
 								<CardButton
-									iconSource={editBtn}
+									iconSource={edit}
 									text="Editar"
 									style={{ marginRight: 8 }}
 								/>
-								<CardButton iconSource={trashBtn} text="Excluir" />
+								<CardButton iconSource={trash} text="Excluir" />
 							</Row>
 						</Card>
 					</CardContainer>
@@ -195,11 +191,11 @@ const Goal: React.FC = () => {
 					</TableColumn>
 					<TableColumn>
 						<Row>
-							<TableIcon source={pause} />
-							<TableIcon source={edit} style={{ marginLeft: 5 }} />
-							<TableIcon source={trash} style={{ marginLeft: 5 }} />
-							<TableIcon source={check} style={{ marginLeft: 5 }} />
-							<TableIcon source={search} style={{ marginLeft: 5 }} />
+							<Pause />
+							<Edit />
+							<Trash />
+							<Check />
+							<Search />
 						</Row>
 					</TableColumn>
 				</TableRow>
@@ -219,11 +215,11 @@ const Goal: React.FC = () => {
 					</TableColumn>
 					<TableColumn>
 						<Row>
-							<TableIcon source={pause} />
-							<TableIcon source={edit} style={{ marginLeft: 5 }} />
-							<TableIcon source={trash} style={{ marginLeft: 5 }} />
-							<TableIcon source={check} style={{ marginLeft: 5 }} />
-							<TableIcon source={search} style={{ marginLeft: 5 }} />
+							<Pause />
+							<Edit />
+							<Trash />
+							<Check />
+							<Search />
 						</Row>
 					</TableColumn>
 				</TableRow>
@@ -243,11 +239,11 @@ const Goal: React.FC = () => {
 					</TableColumn>
 					<TableColumn>
 						<Row>
-							<TableIcon source={pause} />
-							<TableIcon source={edit} style={{ marginLeft: 5 }} />
-							<TableIcon source={trash} style={{ marginLeft: 5 }} />
-							<TableIcon source={check} style={{ marginLeft: 5 }} />
-							<TableIcon source={search} style={{ marginLeft: 5 }} />
+							<Pause />
+							<Edit />
+							<Trash />
+							<Check />
+							<Search />
 						</Row>
 					</TableColumn>
 				</TableRow>
