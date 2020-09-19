@@ -13,6 +13,10 @@ import {
 	LabelText,
 } from './styles';
 
+import { isDesktop } from '~/utils/consts';
+
+const size = isDesktop ? 120 : 100;
+
 const CategoryExpenses: React.FC = () => {
 	const { colors } = useContext(ThemeContext);
 
@@ -53,8 +57,6 @@ const CategoryExpenses: React.FC = () => {
 			})),
 		[colors]
 	);
-
-	const size = 100;
 
 	return (
 		<Container>

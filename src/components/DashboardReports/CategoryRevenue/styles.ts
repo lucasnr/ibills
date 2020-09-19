@@ -27,7 +27,7 @@ export const LabelBullet = styled.View`
 export const LabelText = styled.Text`
 	color: ${({ theme }) => theme.text.primary};
 	font-family: ${({ theme }) => theme.font.secondary.regular};
-	font-size: ${isDesktop ? 12 : 10}px;
+	font-size: ${isDesktop ? 14 : 10}px;
 `;
 
 export const Description = styled.View`

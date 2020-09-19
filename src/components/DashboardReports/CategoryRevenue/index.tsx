@@ -16,9 +16,12 @@ import {
 	DescriptionText,
 } from './styles';
 
+import { isDesktop } from '~/utils/consts';
+
+const size = isDesktop ? 120 : 100;
+
 const CategoryRevenue: React.FC = () => {
 	const { colors } = useContext(ThemeContext);
-	const size = 100;
 
 	const data = useMemo(
 		() => [

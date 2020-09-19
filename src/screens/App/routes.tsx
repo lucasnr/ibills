@@ -71,7 +71,7 @@ function Routes() {
 				<TopBar.Navigator
 					tabBar={(props) => <CustomMenu {...props} />}
 					swipeEnabled={false}
-					initialRouteName="Settings"
+					initialRouteName="Reports"
 				>
 					{routes.map((route, index) => (
 						<TopBar.Screen

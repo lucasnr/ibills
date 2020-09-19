@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import { isDesktop } from '~/utils/consts';
+
 export const Container = styled.View`
 	background-color: ${({ theme }) => theme.background.primary};
 	border-radius: 5px;
@@ -16,14 +18,14 @@ export const Icon = styled.Image`
 
 export const Title = styled.Text`
 	font-family: ${({ theme }) => theme.font.secondary.bold};
-	font-size: 18px;
-	margin: 20px 0px 6px 0px;
+	font-size: ${isDesktop ? 22 : 18}px;
+	margin: ${isDesktop ? 25 : 20}px 0px 6px 0px;
 `;
 
 export const PercentageContainer = styled.View`
 	background-color: ${({ theme }) => theme.background.secondary};
 	border-radius: 5px;
-	height: 6px;
+	height: ${isDesktop ? 8 : 6}px;
 	position: relative;
 `;
 

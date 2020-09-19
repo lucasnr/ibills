@@ -4,6 +4,10 @@ import { ProgressCircle } from 'react-native-svg-charts';
 
 import ChartContainer, { ChartText } from '~/components/ChartContainer';
 
+import { isDesktop } from '~/utils/consts';
+
+const size = isDesktop ? 120 : 100;
+
 interface Props {
 	percentage: number;
 	color?: string;
@@ -12,7 +16,6 @@ interface Props {
 
 const GoalPercentage: React.FC<Props> = ({ percentage, color, background }) => {
 	const { colors } = useContext(ThemeContext);
-	const size = 100;
 
 	return (
 		<ChartContainer
