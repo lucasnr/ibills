@@ -10,6 +10,7 @@ interface Props {
 	style?: StyleProp<ViewStyle>;
 	contentContainerStyle?: StyleProp<ViewStyle>;
 	mobileOnly?: boolean;
+	showScrollbar?: boolean;
 }
 
 const ScrollContainer: React.FC<Props> = ({
@@ -17,13 +18,14 @@ const ScrollContainer: React.FC<Props> = ({
 	style,
 	contentContainerStyle,
 	mobileOnly = false,
+	showScrollbar = false,
 }) => {
 	if (mobileOnly && isDesktop) return <>{children}</>;
 
 	return (
 		<Container
 			horizontal={true}
-			showsHorizontalScrollIndicator={false}
+			showsHorizontalScrollIndicator={showScrollbar}
 			style={style}
 			contentContainerStyle={[
 				contentContainerStyle,
