@@ -7,7 +7,13 @@ import { Card, CardContainer } from '~/components/Card';
 import Subtitle from '~/components/Subtitle';
 import Row, { RowCol } from '~/components/Row';
 
-import { Percentage, Label, ProgressText, ProgressLabel } from './styles';
+import {
+	Percentage,
+	Label,
+	ProgressText,
+	ProgressLabel,
+	Header,
+} from './styles';
 import ChartContainer from '~/components/ChartContainer';
 
 const MonthlyTransactions: React.FC = () => {
@@ -27,17 +33,19 @@ const MonthlyTransactions: React.FC = () => {
 		<CardContainer style={{ marginRight: 0 }}>
 			<Subtitle text="Movimentações Mensais" />
 			<Card>
-				<Row style={{ justifyContent: 'flex-end' }}>
-					<Label>Dezembro</Label>
-					<Icon name="chevron-down" color="#AA3CBE" size={22} />
-				</Row>
+				<Header>
+					<Row>
+						<Icon name="arrow-up" color="#AA3CBE" size={16} />
+						<Percentage>13%</Percentage>
+						<Label>Receitas</Label>
+						<Icon name="chevron-down" color="#AA3CBE" size={22} />
+					</Row>
 
-				<Row>
-					<Icon name="arrow-up" color="#AA3CBE" size={16} />
-					<Percentage>13%</Percentage>
-					<Label>Receitas</Label>
-					<Icon name="chevron-down" color="#AA3CBE" size={22} />
-				</Row>
+					<Row>
+						<Label>Dezembro</Label>
+						<Icon name="chevron-down" color="#AA3CBE" size={22} />
+					</Row>
+				</Header>
 
 				<LineChart
 					style={{ height: 100, width: 350 }}

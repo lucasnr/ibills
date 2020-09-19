@@ -17,6 +17,7 @@ import Exit from './SvgIcon/Exit';
 import Notification from './SvgIcon/Notification';
 import {
 	Container,
+	MenuContainer,
 	ItemsContainer,
 	Item,
 	ItemLabel,
@@ -110,7 +111,11 @@ const CustomDrawer: React.FC<Props> = ({ navigation }) => {
 
 	return (
 		<Container>
-			{!isDesktop && <Menu navigation={navigation} />}
+			{!isDesktop && (
+				<MenuContainer>
+					<Menu navigation={navigation} />
+				</MenuContainer>
+			)}
 
 			<Row desktopOnly style={{ justifyContent: 'space-between' }}>
 				<ItemsContainer>

@@ -1,5 +1,12 @@
 import styled from 'styled-components/native';
 
+import Row from '~/components/Row';
+
+export const Header = styled(Row)`
+	justify-content: space-between;
+	margin-bottom: 20px;
+`;
+
 export const Percentage = styled.Text`
 	color: ${({ theme }) => theme.text.primary};
 	font-family: ${({ theme }) => theme.font.secondary.bold};

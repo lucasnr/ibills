@@ -137,7 +137,7 @@ const Expenses: React.FC = () => {
 							</TouchableOpacity>
 						</Row>
 					</TableHead>
-					<TableHead width={100}>
+					<TableHead width={120}>
 						<Row>
 							<TableHeadText>Data</TableHeadText>
 							<TouchableOpacity>
@@ -168,7 +168,7 @@ const Expenses: React.FC = () => {
 							</TouchableOpacity>
 						</Row>
 					</TableHead>
-					<TableHead width={120}>
+					<TableHead width={100}>
 						<TableHeadText>Ações</TableHeadText>
 					</TableHead>
 				</TableRow>
@@ -190,7 +190,7 @@ const Expenses: React.FC = () => {
 								{item.danger ? 'Em Atraso' : 'Em Dia'}
 							</Situation>
 						</TableColumn>
-						<TableColumn width={100}>
+						<TableColumn width={120}>
 							<TableColumnText danger={item.danger}>
 								{item.datetime}
 							</TableColumnText>
@@ -215,7 +215,7 @@ const Expenses: React.FC = () => {
 								{item.formattedValue}
 							</TableColumnText>
 						</TableColumn>
-						<TableColumn width={120}>
+						<TableColumn width={100}>
 							<Row>
 								<TableIcon source={edit} />
 								<TableIcon source={trash} style={{ marginLeft: 8 }} />

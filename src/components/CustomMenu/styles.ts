@@ -13,11 +13,15 @@ const containerMobileStyle: ViewStyle = {
 export const Container = styled.ScrollView.attrs({
 	showsVerticalScrollIndicator: false,
 	contentContainerStyle: {
-		justifyContent: 'space-between',
+		justifyContent: 'flex-start',
 		...(isDesktop ? {} : containerMobileStyle),
 	},
 })`
 	flex-grow: ${isDesktop ? 0 : 1};
+`;
+
+export const MenuContainer = styled.View`
+	min-height: 60px;
 `;
 
 const itemsContainerDesktopStyle = css`
