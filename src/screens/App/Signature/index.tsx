@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { View } from 'react-native';
 
 import Container from '~/components/AppScreenContainer';
 import Subtitle from '~/components/Subtitle';
 import Row from '~/components/Row';
-import { Card, CardContainer } from '~/components/Card';
+import { Card, CardContainer, CardButton } from '~/components/Card';
 import {
 	Table,
 	TableRow,
@@ -20,8 +20,8 @@ import {
 	Description,
 	Timestamp,
 	ImageIcon,
-	CardButton,
-	CardButtonText,
+	CardButtonAlt,
+	CardButtonAltText,
 	SignatureIllustration,
 } from './styles';
 
@@ -31,26 +31,50 @@ import glasshour from '~/assets/img/glasshour-icon.png';
 import reload from '~/assets/img/reload-icon.png';
 import check from '~/assets/img/check-icon.png';
 import clock from '~/assets/img/clock-icon.png';
+import close from '~/assets/img/window-close.png';
 
 const Signature: React.FC = () => {
+	const [valid, setValid] = useState(false);
+	const onPress = useCallback(() => {
+		setValid((prev) => !prev);
+	}, []);
+
 	return (
 		<Container>
 			<Row desktopOnly style={{ alignItems: 'flex-start' }}>
 				<CardContainer>
-					<Subtitle text="Assinatura Inativa" />
-					<Card>
+					<Subtitle text={valid ? 'Assinatura Ativa' : 'Assinatura Inativa'} />
+					<Card style={{ minWidth: 205 }}>
 						<Header>
 							<ImageIcon size={22} source={glasshour} />
 							<View>
-								<Description>Sua assinatura expirou em</Description>
-								<Timestamp>08 de agosto de 2020.</Timestamp>
+								{valid ? (
+									<>
+										<Description>Sua assinatura expira em</Description>
+										<Timestamp>29 de setembro de 2020.</Timestamp>
+									</>
+								) : (
+									<>
+										<Description>Sua assinatura expirou em</Description>
+										<Timestamp>08 de agosto de 2020.</Timestamp>
+									</>
+								)}
 							</View>
 						</Header>
 
-						<CardButton activeOpacity={0.7}>
-							<ImageIcon size={12} source={reload} />
-							<CardButtonText>Renovar Assinatura</CardButtonText>
-						</CardButton>
+						{valid ? (
+							<CardButton
+								iconSource={close}
+								text="Cancelar Assinatura"
+								style={{ marginTop: 0, width: '100%' }}
+								onPress={onPress}
+							/>
+						) : (
+							<CardButtonAlt activeOpacity={0.7} onPress={onPress}>
+								<ImageIcon size={12} source={reload} />
+								<CardButtonAltText>Renovar Assinatura</CardButtonAltText>
+							</CardButtonAlt>
+						)}
 					</Card>
 				</CardContainer>
 

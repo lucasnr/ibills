@@ -32,15 +32,15 @@ export const ImageIcon = styled.Image<ImageIconProps>`
 	width: ${({ size = 16 }) => size}px;
 `;
 
-export const CardButton = styled.TouchableOpacity`
+export const CardButtonAlt = styled.TouchableOpacity`
 	align-items: center;
 	background-color: #ddf4f6;
 	flex-direction: row;
 	justify-content: center;
-	padding: 12px;
+	padding: 14px;
 `;
 
-export const CardButtonText = styled.Text`
+export const CardButtonAltText = styled.Text`
 	color: ${({ theme }) => theme.colors.secondary};
 	font-family: ${({ theme }) => theme.font.primary.medium};
 	font-size: 12px;
