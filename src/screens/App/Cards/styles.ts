@@ -60,18 +60,17 @@ export const ProgressLabel = styled(Status)`
 export const CardIllustration = styled.Image.attrs({
 	source: cardIllustration,
 })`
-	bottom: 20px;
 	height: 170px;
-	right: 20px;
-	position: fixed;
-	width: 184px;
+	margin-top: auto;
+	width: 186px;
 `;
 
 export const ShoppingIllustration = styled(CardIllustration).attrs({
 	source: shoppingIllustration,
 })`
 	height: 242px;
-	right: 160px;
+	margin-left: auto;
+	margin-right: -46px;
 	width: 124px;
 	z-index: -5;
 `;
