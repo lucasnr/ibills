@@ -14,6 +14,7 @@ import Target from './SvgIcon/Target';
 import Chart from './SvgIcon/Chart';
 import Settings from './SvgIcon/Settings';
 import Exit from './SvgIcon/Exit';
+import Notification from './SvgIcon/Notification';
 import {
 	Container,
 	ItemsContainer,
@@ -130,12 +131,15 @@ const CustomDrawer: React.FC<Props> = ({ navigation }) => {
 					})}
 				</ItemsContainer>
 
-				<Item onPress={signOut}>
-					<IconContainer>
-						<Exit color={text.alternative} />
-					</IconContainer>
-					{!isDesktop && <ItemLabel>Sair</ItemLabel>}
-				</Item>
+				<Row desktopOnly>
+					{isDesktop && <Notification color={text.alternative} />}
+					<Item onPress={signOut}>
+						<IconContainer>
+							<Exit color={text.alternative} />
+						</IconContainer>
+						{!isDesktop && <ItemLabel>Sair</ItemLabel>}
+					</Item>
+				</Row>
 			</Row>
 		</Container>
 	);
