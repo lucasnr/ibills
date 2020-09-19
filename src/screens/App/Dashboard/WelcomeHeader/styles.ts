@@ -9,6 +9,8 @@ export const Wrapper = styled.View`
 	border-radius: 5px;
 	flex-direction: row;
 	margin-bottom: 28px;
+	max-width: 440px;
+	width: 100%;
 `;
 
 export const Container = styled.View`

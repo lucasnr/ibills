@@ -24,7 +24,7 @@ const MonthlyTransactions: React.FC = () => {
 	};
 
 	return (
-		<CardContainer>
+		<CardContainer style={{ marginRight: 0 }}>
 			<Subtitle text="Movimentações Mensais" />
 			<Card>
 				<Row style={{ justifyContent: 'flex-end' }}>
